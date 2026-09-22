@@ -1,0 +1,1604 @@
+[
+  {
+    "file": "src\\bot\\bot.ts",
+    "line": 96,
+    "type": "on",
+    "trigger": "'callback_query:data'"
+  },
+  {
+    "file": "src\\bot\\bot.ts",
+    "line": 100,
+    "type": "on",
+    "trigger": "'message'"
+  },
+  {
+    "file": "src\\bot\\confirm-action.ts",
+    "line": 106,
+    "type": "callbackQuery",
+    "trigger": "/^act:go:[a-z_]+:[a-f0-9-]{36}$/"
+  },
+  {
+    "file": "src\\bot\\confirm-action.ts",
+    "line": 167,
+    "type": "callbackQuery",
+    "trigger": "/^act:no:[a-z_]+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1025,
+    "type": "callbackQuery",
+    "trigger": "/^adm:help:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1037,
+    "type": "callbackQuery",
+    "trigger": "'adm:settings'"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1072,
+    "type": "callbackQuery",
+    "trigger": "'adm:group_find'"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1091,
+    "type": "callbackQuery",
+    "trigger": "/^adm:life:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1154,
+    "type": "callbackQuery",
+    "trigger": "'adm:home'"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1178,
+    "type": "callbackQuery",
+    "trigger": "/^adm:admins(?::\\d+)?$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1199,
+    "type": "callbackQuery",
+    "trigger": "/^adm:players:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1254,
+    "type": "callbackQuery",
+    "trigger": "'adm:find'"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1279,
+    "type": "callbackQuery",
+    "trigger": "/^adm:player:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1299,
+    "type": "callbackQuery",
+    "trigger": "/^adm:econ:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1339,
+    "type": "callbackQuery",
+    "trigger": "/^adm:edu:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1378,
+    "type": "callbackQuery",
+    "trigger": "/^adm:limits:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1420,
+    "type": "callbackQuery",
+    "trigger": "/^adm:mod:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1440,
+    "type": "callbackQuery",
+    "trigger": "/^adm:warn:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1469,
+    "type": "callbackQuery",
+    "trigger": "/^adm:msg:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1501,
+    "type": "callbackQuery",
+    "trigger": "/^adm:wrev:(-?\\d+):([\\w-]+)$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1528,
+    "type": "callbackQuery",
+    "trigger": "/^adm:skills:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1564,
+    "type": "callbackQuery",
+    "trigger": "/^adm:act:[a-z_]+:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1627,
+    "type": "callbackQuery",
+    "trigger": "/^adm:skill:[\\w-]+:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1655,
+    "type": "callbackQuery",
+    "trigger": "/^adm:status:[A-Z]+:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1684,
+    "type": "callbackQuery",
+    "trigger": "/^adm:degree:[A-Z]+:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1712,
+    "type": "callbackQuery",
+    "trigger": "/^adm:confirm:[a-z_]+:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1794,
+    "type": "callbackQuery",
+    "trigger": "'adm:discard'"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1805,
+    "type": "callbackQuery",
+    "trigger": "/^adm:run:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1814,
+    "type": "callbackQuery",
+    "trigger": "/^adm:apply:[a-f0-9-]{36}$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 1988,
+    "type": "callbackQuery",
+    "trigger": "/^adm:groups:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2037,
+    "type": "callbackQuery",
+    "trigger": "/^adm:group:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2069,
+    "type": "callbackQuery",
+    "trigger": "/^adm:group:sync:-?\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2113,
+    "type": "callbackQuery",
+    "trigger": "/^adm:logs:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2153,
+    "type": "callbackQuery",
+    "trigger": "'adm:cases'"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2172,
+    "type": "callbackQuery",
+    "trigger": "/^adm:case_retry:[\\w-]+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2200,
+    "type": "callbackQuery",
+    "trigger": "/^adm:reports:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2220,
+    "type": "callbackQuery",
+    "trigger": "/^adm:report:.+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2249,
+    "type": "callbackQuery",
+    "trigger": "/^adm:report_reply:.+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2291,
+    "type": "callbackQuery",
+    "trigger": "'adm:report_cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\admin.handler.ts",
+    "line": 2303,
+    "type": "callbackQuery",
+    "trigger": "/^adm:report_close:.+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\deploy.handler.ts",
+    "line": 140,
+    "type": "callbackQuery",
+    "trigger": "'deploy:panel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\deploy.handler.ts",
+    "line": 157,
+    "type": "callbackQuery",
+    "trigger": "'deploy:confirm'"
+  },
+  {
+    "file": "src\\bot\\handlers\\deploy.handler.ts",
+    "line": 182,
+    "type": "callbackQuery",
+    "trigger": "'deploy:run'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 54,
+    "type": "callbackQuery",
+    "trigger": "'streak:claim'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 87,
+    "type": "callbackQuery",
+    "trigger": "'work:overtime'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 138,
+    "type": "callbackQuery",
+    "trigger": "'lottery:buy'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 175,
+    "type": "callbackQuery",
+    "trigger": "'city:projects'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 201,
+    "type": "callbackQuery",
+    "trigger": "/^project:launch:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 259,
+    "type": "callbackQuery",
+    "trigger": "/^project:history:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 300,
+    "type": "callbackQuery",
+    "trigger": "/^project:mydonations:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 336,
+    "type": "callbackQuery",
+    "trigger": "/^project:donate:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 376,
+    "type": "callbackQuery",
+    "trigger": "/^project:custom:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 432,
+    "type": "callbackQuery",
+    "trigger": "'city:elections'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 455,
+    "type": "callbackQuery",
+    "trigger": "'election:candidacy'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 499,
+    "type": "callbackQuery",
+    "trigger": "/^election:vote:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 525,
+    "type": "callbackQuery",
+    "trigger": "/^mkt:list:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 539,
+    "type": "callbackQuery",
+    "trigger": "'mkt:mine'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 559,
+    "type": "callbackQuery",
+    "trigger": "/^mkt:sell:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 617,
+    "type": "callbackQuery",
+    "trigger": "'mkt:sell_cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 634,
+    "type": "callbackQuery",
+    "trigger": "/^mkt:cancel:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 656,
+    "type": "callbackQuery",
+    "trigger": "/^trade:buy:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 696,
+    "type": "callbackQuery",
+    "trigger": "'quest:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 709,
+    "type": "callbackQuery",
+    "trigger": "/^quest:claim:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 727,
+    "type": "callbackQuery",
+    "trigger": "'quest:chest'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 743,
+    "type": "callbackQuery",
+    "trigger": "'ach:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 767,
+    "type": "callbackQuery",
+    "trigger": "'fortune:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 785,
+    "type": "callbackQuery",
+    "trigger": "'fortune:draw'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 814,
+    "type": "callbackQuery",
+    "trigger": "'dep:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 827,
+    "type": "callbackQuery",
+    "trigger": "/^dep:open:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 852,
+    "type": "callbackQuery",
+    "trigger": "'dep:cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 867,
+    "type": "callbackQuery",
+    "trigger": "/^dep:break:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 902,
+    "type": "callbackQuery",
+    "trigger": "'clinic:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 915,
+    "type": "callbackQuery",
+    "trigger": "'clinic:treat'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 949,
+    "type": "callbackQuery",
+    "trigger": "'clinic:treat_emergency'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 984,
+    "type": "callbackQuery",
+    "trigger": "'clinic:insure'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 1028,
+    "type": "callbackQuery",
+    "trigger": "'rent:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 1041,
+    "type": "callbackQuery",
+    "trigger": "'rent:market'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 1054,
+    "type": "callbackQuery",
+    "trigger": "/^rent:toggle:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 1074,
+    "type": "callbackQuery",
+    "trigger": "/^rent:price:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 1110,
+    "type": "callbackQuery",
+    "trigger": "'rent:cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 1125,
+    "type": "callbackQuery",
+    "trigger": "/^rent:take:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 1157,
+    "type": "callbackQuery",
+    "trigger": "'rent:end'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 1174,
+    "type": "callbackQuery",
+    "trigger": "'rent:renew'"
+  },
+  {
+    "file": "src\\bot\\handlers\\expansion.handler.ts",
+    "line": 1206,
+    "type": "callbackQuery",
+    "trigger": "'passport:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 424,
+    "type": "callbackQuery",
+    "trigger": "'fam:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 435,
+    "type": "callbackQuery",
+    "trigger": "/^fam:accept:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 448,
+    "type": "callbackQuery",
+    "trigger": "/^fam:mahr:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 474,
+    "type": "callbackQuery",
+    "trigger": "/^fam:reject:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 487,
+    "type": "callbackQuery",
+    "trigger": "/^fam:confirm:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 500,
+    "type": "callbackQuery",
+    "trigger": "/^fam:withdraw:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 512,
+    "type": "callbackQuery",
+    "trigger": "'fam:start_propose'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 538,
+    "type": "callbackQuery",
+    "trigger": "'fam:cancel_input'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 549,
+    "type": "callbackQuery",
+    "trigger": "'fam:bonus'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 576,
+    "type": "callbackQuery",
+    "trigger": "'fam:detail'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 587,
+    "type": "callbackQuery",
+    "trigger": "'fam:activity'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 602,
+    "type": "callbackQuery",
+    "trigger": "'fam:gift'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 629,
+    "type": "callbackQuery",
+    "trigger": "'fam:divorce'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 649,
+    "type": "callbackQuery",
+    "trigger": "'fam:divorce_confirm'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 675,
+    "type": "callbackQuery",
+    "trigger": "'pet:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 687,
+    "type": "callbackQuery",
+    "trigger": "'pet:shop'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 697,
+    "type": "callbackQuery",
+    "trigger": "'pet:choose_kind'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 708,
+    "type": "callbackQuery",
+    "trigger": "/^pet:adopt:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 721,
+    "type": "callbackQuery",
+    "trigger": "/^pet:adopt_go:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 786,
+    "type": "callbackQuery",
+    "trigger": "'pet:cancel_name'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 797,
+    "type": "callbackQuery",
+    "trigger": "'pet:feed'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 814,
+    "type": "callbackQuery",
+    "trigger": "'pet:play'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 825,
+    "type": "callbackQuery",
+    "trigger": "'pet:bonus'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 846,
+    "type": "callbackQuery",
+    "trigger": "'auc:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 865,
+    "type": "callbackQuery",
+    "trigger": "'auc:start_bid'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 900,
+    "type": "callbackQuery",
+    "trigger": "'auc:cancel_bid'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 923,
+    "type": "callbackQuery",
+    "trigger": "'gym:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 933,
+    "type": "callbackQuery",
+    "trigger": "'gym:subscribe'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 960,
+    "type": "callbackQuery",
+    "trigger": "'loan:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 970,
+    "type": "callbackQuery",
+    "trigger": "'loan:start_request'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 996,
+    "type": "callbackQuery",
+    "trigger": "'loan:cancel_request'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1007,
+    "type": "callbackQuery",
+    "trigger": "/^loan:accept:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1037,
+    "type": "callbackQuery",
+    "trigger": "/^loan:reject:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1049,
+    "type": "callbackQuery",
+    "trigger": "/^loan:repay:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1074,
+    "type": "callbackQuery",
+    "trigger": "'chal:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1093,
+    "type": "callbackQuery",
+    "trigger": "'chal:claim'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1119,
+    "type": "callbackQuery",
+    "trigger": "'pol:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1138,
+    "type": "callbackQuery",
+    "trigger": "/^pol:set:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1160,
+    "type": "callbackQuery",
+    "trigger": "'br:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1170,
+    "type": "callbackQuery",
+    "trigger": "/^br:open:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1199,
+    "type": "callbackQuery",
+    "trigger": "/^br:pick:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1220,
+    "type": "callbackQuery",
+    "trigger": "/^br:collect:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1251,
+    "type": "callbackQuery",
+    "trigger": "'ad:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1260,
+    "type": "callbackQuery",
+    "trigger": "'ad:start'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1281,
+    "type": "callbackQuery",
+    "trigger": "'ad:cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\features.handler.ts",
+    "line": 1293,
+    "type": "callbackQuery",
+    "trigger": "'report:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\group.handler.ts",
+    "line": 462,
+    "type": "on",
+    "trigger": "'my_chat_member'"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 520,
+    "type": "command",
+    "trigger": "'botupdate'"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 540,
+    "type": "callbackQuery",
+    "trigger": "'op:panel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 557,
+    "type": "callbackQuery",
+    "trigger": "'op:logs'"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 580,
+    "type": "callbackQuery",
+    "trigger": "'bk:panel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 597,
+    "type": "callbackQuery",
+    "trigger": "'bk:new'"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 641,
+    "type": "callbackQuery",
+    "trigger": "new RegExp(`^bk:view:(${BACKUP_ID})$`)"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 666,
+    "type": "callbackQuery",
+    "trigger": "new RegExp(`^bk:v:(${BACKUP_ID})$`)"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 710,
+    "type": "callbackQuery",
+    "trigger": "'bk:all'"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 753,
+    "type": "callbackQuery",
+    "trigger": "'bk:prune'"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 788,
+    "type": "callbackQuery",
+    "trigger": "new RegExp(`^bk:del:(${BACKUP_ID})$`)"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 828,
+    "type": "callbackQuery",
+    "trigger": "new RegExp(`^bk:del2:(${BACKUP_ID})$`)"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 846,
+    "type": "callbackQuery",
+    "trigger": "new RegExp(`^bk:r:(${BACKUP_ID})$`)"
+  },
+  {
+    "file": "src\\bot\\handlers\\ops.handler.ts",
+    "line": 878,
+    "type": "callbackQuery",
+    "trigger": "new RegExp(`^bk:r2:(${BACKUP_ID})$`)"
+  },
+  {
+    "file": "src\\bot\\handlers\\start.handler.ts",
+    "line": 141,
+    "type": "callbackQuery",
+    "trigger": "['rebirth:panel', 'rebirth:start']"
+  },
+  {
+    "file": "src\\bot\\handlers\\start.handler.ts",
+    "line": 169,
+    "type": "command",
+    "trigger": "'admin_help'"
+  },
+  {
+    "file": "src\\bot\\handlers\\start.handler.ts",
+    "line": 173,
+    "type": "command",
+    "trigger": "'start'"
+  },
+  {
+    "file": "src\\bot\\handlers\\start.handler.ts",
+    "line": 208,
+    "type": "callbackQuery",
+    "trigger": "/^reg:gender:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\start.handler.ts",
+    "line": 239,
+    "type": "callbackQuery",
+    "trigger": "'reg:cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 272,
+    "type": "callbackQuery",
+    "trigger": "'panel:close'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 283,
+    "type": "callbackQuery",
+    "trigger": "'id:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 289,
+    "type": "callbackQuery",
+    "trigger": "'id:toggle_privacy'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 303,
+    "type": "callbackQuery",
+    "trigger": "'house:buy_catalog'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 316,
+    "type": "callbackQuery",
+    "trigger": "/^house:buy:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 335,
+    "type": "callbackQuery",
+    "trigger": "'house:start_rest'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 358,
+    "type": "callbackQuery",
+    "trigger": "'house:stop_rest'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 389,
+    "type": "callbackQuery",
+    "trigger": "'house:my_list'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 450,
+    "type": "callbackQuery",
+    "trigger": "/^house:sell:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 483,
+    "type": "callbackQuery",
+    "trigger": "/^house:furnish:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 515,
+    "type": "callbackQuery",
+    "trigger": "'bank:deposit_prompt'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 542,
+    "type": "callbackQuery",
+    "trigger": "'bank:withdraw_prompt'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 564,
+    "type": "callbackQuery",
+    "trigger": "'bank:cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 572,
+    "type": "callbackQuery",
+    "trigger": "'sup:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 586,
+    "type": "callbackQuery",
+    "trigger": "/^sup:new:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 639,
+    "type": "callbackQuery",
+    "trigger": "'sup:cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 656,
+    "type": "callbackQuery",
+    "trigger": "'bank:loan_menu'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 794,
+    "type": "callbackQuery",
+    "trigger": "/^bank:loan_p:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 824,
+    "type": "callbackQuery",
+    "trigger": "/^bank:loan_b:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 854,
+    "type": "callbackQuery",
+    "trigger": "/^bank:loan_go:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 891,
+    "type": "callbackQuery",
+    "trigger": "'bank:interest'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 912,
+    "type": "callbackQuery",
+    "trigger": "'bank:loan_repay'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 959,
+    "type": "callbackQuery",
+    "trigger": "'bank:loan_settle'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1011,
+    "type": "callbackQuery",
+    "trigger": "/^bank:loan_settle_go:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1042,
+    "type": "callbackQuery",
+    "trigger": "/^biz:upgrade:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1075,
+    "type": "callbackQuery",
+    "trigger": "'help:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1080,
+    "type": "callbackQuery",
+    "trigger": "/^help:cat:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1093,
+    "type": "callbackQuery",
+    "trigger": "/^help:topic:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1110,
+    "type": "callbackQuery",
+    "trigger": "'credit:refresh'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1116,
+    "type": "callbackQuery",
+    "trigger": "/^ledger:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1137,
+    "type": "callbackQuery",
+    "trigger": "'stats:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1143,
+    "type": "callbackQuery",
+    "trigger": "'city:refresh'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1153,
+    "type": "callbackQuery",
+    "trigger": "'bank:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1159,
+    "type": "callbackQuery",
+    "trigger": "'house:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1165,
+    "type": "callbackQuery",
+    "trigger": "/^news:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1191,
+    "type": "callbackQuery",
+    "trigger": "'region:refresh'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1197,
+    "type": "callbackQuery",
+    "trigger": "/^rank:(group|global|region):[a-z_]+:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1238,
+    "type": "callbackQuery",
+    "trigger": "'mission:refresh'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1244,
+    "type": "callbackQuery",
+    "trigger": "/^history:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1271,
+    "type": "callbackQuery",
+    "trigger": "/^history:f:[a-z]+:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1301,
+    "type": "callbackQuery",
+    "trigger": "/^skill:train:[\\w-]+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1330,
+    "type": "callbackQuery",
+    "trigger": "'notif:refresh'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1347,
+    "type": "callbackQuery",
+    "trigger": "'notif:read_all'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1372,
+    "type": "callbackQuery",
+    "trigger": "'skills:refresh'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1391,
+    "type": "callbackQuery",
+    "trigger": "'manage:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1406,
+    "type": "callbackQuery",
+    "trigger": "/^payroll:preview:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1426,
+    "type": "callbackQuery",
+    "trigger": "/^payroll:settle:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1465,
+    "type": "callbackQuery",
+    "trigger": "'residence:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1471,
+    "type": "callbackQuery",
+    "trigger": "/^residence:check:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1494,
+    "type": "callbackQuery",
+    "trigger": "/^residence:migrate:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1538,
+    "type": "callbackQuery",
+    "trigger": "/^shop:cat:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1548,
+    "type": "callbackQuery",
+    "trigger": "'shop:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1556,
+    "type": "callbackQuery",
+    "trigger": "/^shop:buy:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1584,
+    "type": "callbackQuery",
+    "trigger": "/^inv:list:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1600,
+    "type": "callbackQuery",
+    "trigger": "/^inv:use:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1650,
+    "type": "callbackQuery",
+    "trigger": "/^lb:group:[a-z]+:\\d+$|^lb:global:[a-z]+:\\d+$/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1681,
+    "type": "callbackQuery",
+    "trigger": "'work:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1686,
+    "type": "callbackQuery",
+    "trigger": "'work:menu:part_time'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1709,
+    "type": "callbackQuery",
+    "trigger": "/^work:pt:cat:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1751,
+    "type": "callbackQuery",
+    "trigger": "/^work:start_pt:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1790,
+    "type": "callbackQuery",
+    "trigger": "'work:start_wp'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1830,
+    "type": "callbackQuery",
+    "trigger": "'work:status'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1897,
+    "type": "callbackQuery",
+    "trigger": "'work:stop'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1965,
+    "type": "callbackQuery",
+    "trigger": "'work:menu:full_time'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 1986,
+    "type": "callbackQuery",
+    "trigger": "'work:ft:new_biz'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2006,
+    "type": "callbackQuery",
+    "trigger": "'work:ft:find_jobs'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2011,
+    "type": "callbackQuery",
+    "trigger": "/^job:page:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2018,
+    "type": "callbackQuery",
+    "trigger": "'job:noop'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2022,
+    "type": "callbackQuery",
+    "trigger": "/^job:open:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2027,
+    "type": "callbackQuery",
+    "trigger": "/^job:apply:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2046,
+    "type": "callbackQuery",
+    "trigger": "'job:mine'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2051,
+    "type": "callbackQuery",
+    "trigger": "/^job:withdraw:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2067,
+    "type": "callbackQuery",
+    "trigger": "'job:quit'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2093,
+    "type": "callbackQuery",
+    "trigger": "/^job:quit_go:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2131,
+    "type": "callbackQuery",
+    "trigger": "/^biz:apps:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2136,
+    "type": "callbackQuery",
+    "trigger": "/^biz:emps:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2142,
+    "type": "callbackQuery",
+    "trigger": "/^biz:setsal:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2192,
+    "type": "callbackQuery",
+    "trigger": "/^biz:setvol:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2248,
+    "type": "callbackQuery",
+    "trigger": "/^biz:postings:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2254,
+    "type": "callbackQuery",
+    "trigger": "/^job:posting_close:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2294,
+    "type": "callbackQuery",
+    "trigger": "/^job:hire:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2325,
+    "type": "callbackQuery",
+    "trigger": "/^job:rej:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2343,
+    "type": "callbackQuery",
+    "trigger": "/^job:fire:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2368,
+    "type": "callbackQuery",
+    "trigger": "/^biz:postjob:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2576,
+    "type": "callbackQuery",
+    "trigger": "'biz:jf:salin'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2577,
+    "type": "callbackQuery",
+    "trigger": "/^biz:jf:sal:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2578,
+    "type": "callbackQuery",
+    "trigger": "/^biz:jf:cap:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2579,
+    "type": "callbackQuery",
+    "trigger": "/^biz:jf:hrs:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2580,
+    "type": "callbackQuery",
+    "trigger": "/^biz:jf:exp:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2581,
+    "type": "callbackQuery",
+    "trigger": "'biz:jf:deg'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2582,
+    "type": "callbackQuery",
+    "trigger": "'biz:jf:age'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2583,
+    "type": "callbackQuery",
+    "trigger": "'biz:jf:save'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2585,
+    "type": "callbackQuery",
+    "trigger": "'biz:jf:cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2592,
+    "type": "callbackQuery",
+    "trigger": "'biz:jf:title'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2617,
+    "type": "callbackQuery",
+    "trigger": "/^biz:profit_all:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2650,
+    "type": "callbackQuery",
+    "trigger": "/^biz:profit:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2688,
+    "type": "callbackQuery",
+    "trigger": "'work:menu:my_biz'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2722,
+    "type": "callbackQuery",
+    "trigger": "/^biz:manage:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2751,
+    "type": "callbackQuery",
+    "trigger": "/^biz:create:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2777,
+    "type": "callbackQuery",
+    "trigger": "/^transfer:confirm:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2843,
+    "type": "callbackQuery",
+    "trigger": "'transfer:help'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2866,
+    "type": "callbackQuery",
+    "trigger": "'transfer:cancel'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2880,
+    "type": "callbackQuery",
+    "trigger": "'edu:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2893,
+    "type": "callbackQuery",
+    "trigger": "'edu:refresh'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2906,
+    "type": "callbackQuery",
+    "trigger": "'edu:choose_field'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2959,
+    "type": "callbackQuery",
+    "trigger": "/^edu:enroll:/"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 2979,
+    "type": "callbackQuery",
+    "trigger": "'edu:graduate'"
+  },
+  {
+    "file": "src\\bot\\handlers\\text.handler.ts",
+    "line": 3017,
+    "type": "on",
+    "trigger": "'message:text'"
+  },
+  {
+    "file": "src\\bot\\handlers\\will.handler.ts",
+    "line": 52,
+    "type": "callbackQuery",
+    "trigger": "'will:main'"
+  },
+  {
+    "file": "src\\bot\\handlers\\will.handler.ts",
+    "line": 67,
+    "type": "callbackQuery",
+    "trigger": "'will:rules'"
+  },
+  {
+    "file": "src\\bot\\handlers\\will.handler.ts",
+    "line": 76,
+    "type": "callbackQuery",
+    "trigger": "'will:set'"
+  },
+  {
+    "file": "src\\bot\\handlers\\will.handler.ts",
+    "line": 111,
+    "type": "callbackQuery",
+    "trigger": "'will:note'"
+  },
+  {
+    "file": "src\\bot\\handlers\\will.handler.ts",
+    "line": 150,
+    "type": "callbackQuery",
+    "trigger": "'will:cancel'"
+  },
+  {
+    "file": "src\\bot\\start-guide.ts",
+    "line": 319,
+    "type": "callbackQuery",
+    "trigger": "new RegExp(`^${START_GUIDE_CALLBACK}:\\\\d+$`)"
+  },
+  {
+    "file": "src\\modules\\deploy\\deploy.service.ts",
+    "line": 433,
+    "type": "on",
+    "trigger": "'error'"
+  },
+  {
+    "file": "src\\modules\\ops\\backup.service.ts",
+    "line": 585,
+    "type": "on",
+    "trigger": "'data'"
+  },
+  {
+    "file": "src\\modules\\ops\\backup.service.ts",
+    "line": 768,
+    "type": "on",
+    "trigger": "'error'"
+  },
+  {
+    "file": "src\\modules\\ops\\backup.service.ts",
+    "line": 1058,
+    "type": "on",
+    "trigger": "'data'"
+  }
+]

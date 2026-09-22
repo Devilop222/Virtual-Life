@@ -1,0 +1,1731 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum MaritalStatus {
+  SINGLE
+  MARRIED
+  DIVORCED
+  WIDOWED
+}
+
+enum SocialLevel {
+  LOW
+  MIDDLE
+  HIGH
+  ELITE
+}
+
+enum PlayerStatus {
+  ACTIVE
+  INACTIVE
+  DEAD
+  BANNED
+}
+
+enum ProfilePrivacy {
+  PUBLIC
+  PRIVATE
+}
+
+enum PlayerActivityState {
+  IDLE
+  WORKING
+  STUDYING
+  RESTING
+  SLEEPING
+  TRAVELING
+}
+
+enum DegreeLevel {
+  DIPLOMA
+  ASSOCIATE
+  BACHELOR
+  MASTER
+  DOCTORATE
+}
+
+enum LifeStage {
+  CHILDHOOD
+  ADOLESCENCE
+  YOUTH
+  ADULTHOOD
+  MIDDLE_AGE
+  SENIORITY
+}
+
+enum GroupType {
+  GROUP
+  SUPERGROUP
+  CHANNEL
+}
+
+enum GroupStatus {
+  ACTIVE
+  DISABLED
+}
+
+enum GroupEnvironmentLevel {
+  VILLAGE
+  CITY
+  PROVINCE
+  COUNTRY
+}
+
+enum PlayerGroupRole {
+  MEMBER
+  ADMIN
+  OWNER
+}
+
+enum PlayerGroupActivity {
+  LOW
+  NORMAL
+  HIGH
+}
+
+enum PlayerGroupStatus {
+  ACTIVE
+  LEFT
+  KICKED
+  BANNED
+}
+
+enum RegistrationState {
+  AWAITING_GENDER
+  AWAITING_BIOGRAPHY
+  COMPLETED
+  CANCELLED
+}
+
+enum RelationshipType {
+  FRIEND
+  FAMILY
+  SPOUSE
+  COLLEAGUE
+  NEIGHBOR
+  ENEMY
+}
+
+enum RelationshipStatus {
+  PENDING
+  ACTIVE
+  BLOCKED
+  ENDED
+}
+
+enum NotificationType {
+  INFO
+  EVENT
+  WARNING
+  SYSTEM
+}
+
+enum NotificationStatus {
+  PENDING
+  SENT
+  FAILED
+  READ
+}
+
+enum WorkSessionType {
+  PART_TIME
+  FULL_TIME
+}
+
+enum WorkSessionStatus {
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum BusinessCategory {
+  SERVICE
+  STORE
+  GYM
+  EDUCATION
+  WORKSHOP
+  FACTORY
+  OFFICE
+}
+
+enum BusinessStatus {
+  ACTIVE
+  BANKRUPT
+  CLOSED
+}
+
+enum JobPostingStatus {
+  OPEN
+  CLOSED
+}
+
+enum JobApplicationStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  CANCELLED
+}
+
+enum PropertyType {
+  ROOM
+  SMALL_HOUSE
+  APARTMENT
+  LARGE_HOUSE
+  VILLA
+  MANSION
+}
+
+enum PropertyStatus {
+  AVAILABLE
+  OWNED
+  RENTED
+}
+
+enum BankAccountStatus {
+  ACTIVE
+  FROZEN
+  CLOSED
+}
+
+enum LoanStatus {
+  ACTIVE
+  PAID
+  DEFAULTED
+  CLOSED
+}
+
+enum ElectionStatus {
+  UPCOMING
+  OPEN
+  CLOSED
+  CANCELLED
+}
+
+enum TransactionType {
+  SALARY_PAYMENT
+  BUSINESS_REVENUE
+  STARTUP_COST
+  BUSINESS_UPGRADE
+  PROPERTY_PURCHASE
+  /// فروش ملک به شهر: قیمت از ترازنامهٔ عمومی می‌آید (MINT) و کمتر از ارزش دارایی است
+  /// تا چرخهٔ خرید→فروش ماشینِ پول‌سازی نشود.
+  PROPERTY_SALE
+  PROPERTY_RENT
+  BANK_DEPOSIT
+  BANK_WITHDRAWAL
+  BANK_INTEREST
+  LOAN_DISBURSEMENT
+  LOAN_REPAYMENT
+  MARKET_TRADE
+  LOTTERY_PRIZE
+  MEDICAL_EXPENSE
+  INSURANCE_PREMIUM
+  DEPOSIT_PAYOUT
+  MAHR_PAYMENT
+  DIVORCE_SETTLEMENT
+  STOCK_BUY
+  STOCK_SELL
+  AUCTION_BID
+  AUCTION_WIN
+  GYM_FEE
+  P2P_LOAN_DISBURSE
+  P2P_LOAN_REPAY
+  FARM_PLANT
+  FARM_HARVEST
+  CRAFTING_FEE
+  BRANCH_SETUP
+  PROPERTY_MAINTENANCE
+  NEWS_AD_FEE
+  /// انتقالِ نقدیِ جیب به جیب (سقفِ کوچک، بدون مالیات) — نامش تاریخی است
+  TRANSFER
+  /// انتقالِ حساب به حساب — سقفِ روزانه دارد و مالیاتش به صندوق منطقه می‌رود
+  BANK_TRANSFER
+  WITHDRAWAL
+  DEPOSIT
+  /// مالیات کسرشده (درآمد حقوق، سود کسب‌وکار) — به صندوق منطقه می‌رود
+  TAX_PAYMENT
+  /// سهم سود وام که بانک واقعاً وصول می‌کند (منبع سود سپرده‌ها)
+  LOAN_INTEREST
+  /// سود پرداختی به سپردهٔ مدت‌دار (هزینهٔ بانک، نه پول تازه)
+  DEPOSIT_INTEREST
+  /// خرید نقدی از فروشگاه شهر (Sink)
+  SHOP_PURCHASE
+  /// پرداخت پاداش از سوی شهر/سیستم (کارت روزانه، نشان، شانس روزانه…)
+  REWARD_PAYOUT
+  /// شهریهٔ دانشگاه — هزینهٔ واقعی تحصیل (Sink)
+  EDUCATION_TUITION
+  /// انتقال میراث از شخصیت فوت‌شده به وارث — پول واقعاً از یک بازیکن به بازیکن دیگر
+  INHERITANCE_TRANSFER
+  /// خرج مشترک خانواده مثل «وقت مشترک» (Sink)
+  FAMILY_EXPENSE
+  /// هزینهٔ سرپرستی و غذای حیوان خانگی (Sink)
+  PET_EXPENSE
+  /// هدیهٔ روزانهٔ حیوانِ خوشحال به بازیکن (MINT، مثل REWARD_PAYOUT)
+  PET_BONUS
+  /// هزینهٔ پیش‌بینی‌نشدهٔ کارت شانس روزانه (Sink)
+  FORTUNE_LOSS
+  /// هزینهٔ تمرینِ فعالِ مهارت (Sink)
+  SKILL_TRAINING
+  /// هزینهٔ مهاجرت بین مناطق — به صندوق منطقهٔ مقصد می‌رود (مثل TAX_PAYMENT)
+  RESIDENCE_MIGRATION_FEE
+  /// تملک وثیقهٔ وام نکول‌شده — خزانهٔ شرکت به صندوق بانک می‌رود (Sink برای بخش خصوصی)
+  LOAN_COLLATERAL_SEIZED
+  /// کمک به پروژهٔ شهری — پول از بخش خصوصی بیرون می‌رود و خرج پروژه می‌شود (Sink)
+  PROJECT_DONATION
+  /// داراییِ متوفیِ بی‌وارث — به صندوق منطقه می‌رسد (Sink برای بخش خصوصی).
+  ///
+  /// بدون این جریان، «زندگی تازه»ِ کسی که وصیتی ننوشته بود پولِ قدیمی را
+  /// بی‌ردیف از بین می‌برد (و ممیزیِ اقتصاد «پول گم‌شده» نشان می‌داد) یا
+  /// آن را بی‌دلیل به زندگی بعدی منتقل می‌کرد (و بی‌وصیتی را سودآور می‌ساخت).
+  UNCLAIMED_ESTATE
+}
+
+model Player {
+  id                    String                          @id @default(uuid()) @map("id")
+  telegramUserId        BigInt                          @unique @map("telegram_user_id")
+  firstName             String                          @map("first_name")
+  lastName              String?                         @map("last_name")
+  username              String?
+  gender                Gender                          @map("gender")
+  birthDate             DateTime?                       @map("birth_date")
+  age                   Int                             @default(18) @map("age")
+  lifeStage             LifeStage                       @default(YOUTH) @map("life_stage")
+  biography             String                          @map("biography")
+  maritalStatus         MaritalStatus                   @default(SINGLE) @map("marital_status")
+  socialLevel           SocialLevel                     @default(LOW) @map("social_level")
+  privacy               ProfilePrivacy                  @default(PUBLIC) @map("privacy")
+  activityState         PlayerActivityState             @default(IDLE) @map("activity_state")
+  health                Int                             @default(100) @map("health")
+  fatigue               Int                             @default(0) @map("fatigue")
+  experience            Int                             @default(0) @map("experience")
+  balance               Decimal                         @default(0) @map("balance")
+  currentDegree         DegreeLevel                     @default(DIPLOMA) @map("current_degree")
+  graduationField       String?                         @map("graduation_field")
+  isEnrolled            Boolean                         @default(false) @map("is_enrolled")
+  enrolledFieldKey      String?                         @map("enrolled_field_key")
+  targetDegree          DegreeLevel?                    @map("target_degree")
+  studyStartedAt        DateTime?                       @map("study_started_at")
+  restStartedAt         DateTime?                       @map("rest_started_at")
+  startedAt             DateTime                        @default(now()) @map("started_at")
+  createdAt             DateTime                        @default(now()) @map("created_at")
+  updatedAt             DateTime                        @updatedAt @map("updated_at")
+  status                PlayerStatus                    @default(ACTIVE) @map("status")
+  occupationId          String?                         @map("occupation_id")
+  occupation            Occupation?                     @relation(fields: [occupationId], references: [id])
+  homeGroupId           String?                         @map("home_group_id")
+  homeGroup             Group?                          @relation("PlayerHomeGroup", fields: [homeGroupId], references: [id])
+  residenceSince        DateTime?                       @map("residence_since")
+  lastMigrationAt       DateTime?                       @map("last_migration_at")
+  streakCount           Int                             @default(0) @map("streak_count")
+  lastStreakAt          DateTime?                       @map("last_streak_at")
+  lastOvertimeAt        DateTime?                       @map("last_overtime_at")
+  referralCode          String?                         @map("referral_code")
+  currentRegionId       String?                         @map("current_region_id")
+  currentRegion         Group?                          @relation("PlayerCurrentRegion", fields: [currentRegionId], references: [id])
+  lastActivityAt        DateTime?                       @map("last_activity_at")
+  /// آخرین لحظه‌ای که فرسودگیِ طبیعیِ بدن روی سلامت اعمال شد.
+  ///
+  /// فرسودگی Lazy است: هیچ تایمری وجود ندارد و مصرفِ بعدی، کلِ بازهٔ سپری‌شده
+  /// از همین لحظه را یک‌جا حساب می‌کند. این ستون «باقی‌ماندهٔ کسری» را هم
+  /// نگه می‌دارد، چون هنگام اعمال، مبدأ دقیقاً به‌اندازهٔ بخشِ صحیحِ مصرف‌شده
+  /// جلو برده می‌شود و کسر گم نمی‌شود.
+  healthSyncedAt        DateTime                        @default(now()) @map("health_synced_at")
+  /// چندمین زندگیِ این حساب است (۱ = زندگی اول).
+  ///
+  /// «میراث» یعنی مرگ پایانِ حساب نیست. چون `telegram_user_id` یکتاست و
+  /// سابقهٔ مالی/میراث با شناسهٔ همین ردیف گره خورده، زندگی تازه در همین
+  /// ردیف آغاز می‌شود و این شمارنده می‌گوید چندمین بار است — به‌جای ساختن
+  /// ردیف دومِ بازیکن که کلِ دفتر کل و پرونده‌های میراث را بی‌مرجع می‌کرد.
+  lives                 Int                             @default(1) @map("lives")
+  migrations            Migration[]
+  skills                PlayerSkill[]
+  relationships         Relationship[]                  @relation("InitiatedRelationships")
+  receivedRelationships Relationship[]                  @relation("ReceivedRelationships")
+  groupMemberships      PlayerGroup[]
+  notifications         Notification[]
+  workSessions          WorkSession[]
+  ownedBusinesses       Business[]                      @relation("BusinessOwner")
+  employments           BusinessEmployee[]              @relation("EmployeePlayer")
+  jobApplications       JobApplication[]                @relation("PlayerApplications")
+  ownedProperties       Property[]                      @relation("PropertyOwner")
+  rentals               RentalContract[]                @relation("TenantPlayer")
+  bankAccount           BankAccount?
+  loans                 Loan[]
+  votesCast             Vote[]
+  inventory             PlayerInventory[]
+  marketListings        MarketListing[]                 @relation("MarketSeller")
+  lotteryTickets        LotteryTicket[]
+  electionCandidates    ElectionCandidate[]
+  referralsGiven        Referral[]                      @relation("Referrer")
+  referralsReceived     Referral[]                      @relation("Referee")
+  dailyQuests           DailyQuest[]
+  weeklyChests          WeeklyChest[]
+  achievements          AchievementGrant[]
+  termDeposits          TermDeposit[]
+  dailyFortunes         DailyFortune[]
+  insurancePolicies     InsurancePolicy[]
+  travelStamps          TravelStamp[]
+  marriagesInitiated    Marriage[]                      @relation("MarriageInitiator")
+  marriagesReceived     Marriage[]                      @relation("MarriageReceiver")
+  marriageProposalsMade MarriageProposal[]              @relation("ProposalsMade")
+  marriageProposalsRcvd MarriageProposal[]              @relation("ProposalsReceived")
+  pets                  Pet[]
+  auctionBids           AuctionBid[]
+  gymMemberships        GymMembership[]
+  loansGiven            PlayerLoan[]                    @relation("LenderLoans")
+  loansReceived         PlayerLoan[]                    @relation("BorrowerLoans")
+  challengeContribs     RegionalChallengeContribution[]
+  events                GameEvent[]
+  transactionsFrom      FinancialTransaction[]          @relation("SourcePlayer")
+  transactionsTo        FinancialTransaction[]          @relation("DestinationPlayer")
+  warnings              PlayerWarning[]                 @relation("PlayerWarnings")
+  reports               PlayerReport[]                  @relation("PlayerReports")
+  will                  Will?                           @relation("WillOwner")
+  willsAsHeir           Will[]                          @relation("WillHeir")
+  /// یک بازیکن با «زندگی تازه» می‌تواند چند پروندهٔ میراث داشته باشد —
+  /// برای هر زندگی یکی.
+  inheritanceCases      InheritanceCase[]               @relation("InheritanceDeceased")
+  inheritedCases        InheritanceCase[]               @relation("InheritanceHeir")
+  projectDonations      ProjectDonation[]               @relation("PlayerDonations")
+
+  @@index([telegramUserId])
+  @@index([occupationId])
+  @@index([status])
+  @@index([homeGroupId])
+  /// چرخهٔ دوره‌ای فرسودگی با «قدیمی‌ترین همگام‌سازی اول» می‌گردد؛ بدون این
+  /// ایندکس، هر چرخه یک پیمایشِ کاملِ جدولِ بازیکنان می‌شد.
+  @@index([status, healthSyncedAt])
+  @@map("players")
+}
+
+model Group {
+  id                  String                @id @default(uuid()) @map("id")
+  telegramGroupId     BigInt                @unique @map("telegram_group_id")
+  title               String                @map("title")
+  type                GroupType             @default(SUPERGROUP) @map("type")
+  memberCount         Int                   @default(0) @map("member_count")
+  realMemberCount     Int                   @default(0) @map("real_member_count")
+  gamePopulation      Int                   @default(0) @map("game_population")
+  environmentLevel    GroupEnvironmentLevel @default(VILLAGE) @map("environment_level")
+  /// مهرِ آخرین تغییرِ *واقعی* سطح. کلیدِ ضدتکرارِ اعلانِ «سطح عوض شد» از همین
+  /// ساخته می‌شود تا تغییرِ دوبارهٔ همان منطقه (شهر → روستا → شهر) گم نشود.
+  levelChangedAt      DateTime?             @map("level_changed_at")
+  ownerTelegramUserId BigInt?               @map("owner_telegram_user_id")
+  status              GroupStatus           @default(ACTIVE) @map("status")
+  createdAt           DateTime              @default(now()) @map("created_at")
+  updatedAt           DateTime              @updatedAt @map("updated_at")
+  players             PlayerGroup[]
+  residents           Player[]              @relation("PlayerHomeGroup")
+  visitors            Player[]              @relation("PlayerCurrentRegion")
+  properties          Property[]
+  elections           Election[]
+  stat                RegionStat?
+  events              GameEvent[]
+  projects            RegionProject[]
+  lotteryTickets      LotteryTicket[]
+  travelStamps        TravelStamp[]
+  businessBranches    BusinessBranch[]
+  auctions            Auction[]
+  regionalChallenges  RegionalChallenge[]
+  migrationsFrom      Migration[]           @relation("MigrationFrom")
+  migrationsTo        Migration[]           @relation("MigrationTo")
+  activePolicy        String?               @map("active_policy")
+  lotteryLastWeek     Int?                  @map("lottery_last_week")
+  lotteryLastWinnerId String?               @map("lottery_last_winner_id")
+  lotteryLastPrize    Decimal?              @map("lottery_last_prize")
+
+  @@index([telegramGroupId])
+  @@map("groups")
+}
+
+model PlayerGroup {
+  id       String              @id @default(uuid()) @map("id")
+  playerId String              @map("player_id")
+  groupId  String              @map("group_id")
+  joinedAt DateTime            @default(now()) @map("joined_at")
+  role     PlayerGroupRole     @default(MEMBER) @map("role")
+  activity PlayerGroupActivity @default(NORMAL) @map("activity")
+  status   PlayerGroupStatus   @default(ACTIVE) @map("status")
+  player   Player              @relation(fields: [playerId], references: [id])
+  group    Group               @relation(fields: [groupId], references: [id])
+
+  @@unique([playerId, groupId])
+  @@index([groupId])
+  @@index([playerId])
+  @@map("player_groups")
+}
+
+model Occupation {
+  id             String   @id @default(uuid()) @map("id")
+  name           String   @unique @map("name")
+  description    String?  @map("description")
+  category       String   @map("category")
+  level          Int      @default(1) @map("level")
+  baseSalary     Decimal  @default(0) @map("base_salary")
+  requiredAge    Int      @default(18) @map("required_age")
+  experience     Int      @default(0) @map("experience")
+  workingHours   Int      @default(8) @map("working_hours")
+  workplace      String   @map("workplace")
+  promotionRules Json     @default("{}") @map("promotion_rules")
+  requiredSkills Json     @default("[]") @map("required_skills")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  players        Player[]
+
+  @@index([name])
+  @@map("occupations")
+}
+
+model Skill {
+  id          String        @id @default(uuid()) @map("id")
+  name        String        @unique @map("name")
+  description String?       @map("description")
+  category    String        @default("general") @map("category")
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt @map("updated_at")
+  players     PlayerSkill[]
+
+  @@index([name])
+  @@map("skills")
+}
+
+model PlayerSkill {
+  id        String   @id @default(uuid()) @map("id")
+  playerId  String   @map("player_id")
+  skillId   String   @map("skill_id")
+  level     Int      @default(1) @map("level")
+  points    Int      @default(0) @map("points")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  player    Player   @relation(fields: [playerId], references: [id])
+  skill     Skill    @relation(fields: [skillId], references: [id])
+
+  @@unique([playerId, skillId])
+  @@index([skillId])
+  @@index([playerId])
+  @@map("player_skills")
+}
+
+model Relationship {
+  id              String             @id @default(uuid()) @map("id")
+  playerId        String             @map("player_id")
+  relatedPlayerId String             @map("related_player_id")
+  type            RelationshipType   @map("type")
+  status          RelationshipStatus @default(ACTIVE) @map("status")
+  strength        Int                @default(50) @map("strength")
+  createdAt       DateTime           @default(now()) @map("created_at")
+  updatedAt       DateTime           @updatedAt @map("updated_at")
+  player          Player             @relation("InitiatedRelationships", fields: [playerId], references: [id])
+  relatedPlayer   Player             @relation("ReceivedRelationships", fields: [relatedPlayerId], references: [id])
+
+  @@unique([playerId, relatedPlayerId, type])
+  @@index([relatedPlayerId])
+  @@index([playerId])
+  @@map("relationships")
+}
+
+model Notification {
+  id        String             @id @default(uuid()) @map("id")
+  playerId  String             @map("player_id")
+  title     String             @map("title")
+  message   String             @map("message")
+  type      NotificationType   @default(INFO) @map("type")
+  status    NotificationStatus @default(PENDING) @map("status")
+  dedupeKey String?            @unique @map("dedupe_key")
+  createdAt DateTime           @default(now()) @map("created_at")
+  readAt    DateTime?          @map("read_at")
+  updatedAt DateTime           @updatedAt @map("updated_at")
+  player    Player             @relation(fields: [playerId], references: [id])
+
+  @@index([playerId])
+  @@index([status])
+  /// ترتیب‌دادنِ تختهٔ اعلان‌ها (`orderBy: createdAt desc` روی یک بازیکن)
+  /// بدون مرتب‌سازیِ کلِ جدول انجام می‌شود.
+  @@index([playerId, createdAt])
+  /// سیاست نگهداری: پاکسازیِ دوره‌ای بر اساس وضعیت و سن.
+  @@index([status, createdAt])
+  @@map("notifications")
+}
+
+model UserState {
+  id             String    @id @default(uuid()) @map("id")
+  telegramUserId BigInt    @unique @map("telegram_user_id")
+  currentContext String?   @map("current_context")
+  stateData      Json      @default("{}") @map("state_data")
+  pendingSince   DateTime? @map("pending_since")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  @@index([telegramUserId])
+  @@index([pendingSince])
+  @@map("user_states")
+}
+
+model Property {
+  id                  String           @id @default(uuid()) @map("id")
+  type                PropertyType     @map("type")
+  title               String           @map("title")
+  level               Int              @default(1) @map("level")
+  purchasePrice       Decimal          @map("purchase_price")
+  rentalPriceMonthly  Decimal          @map("rental_price_monthly")
+  baseAssetValue      Decimal          @map("base_asset_value")
+  fatigueRecoveryRate Decimal          @default(1.0) @map("fatigue_recovery_rate")
+  isListedForRent     Boolean          @default(false) @map("is_listed_for_rent")
+  isFurnished         Boolean          @default(false) @map("is_furnished")
+  lastMaintenanceAt   DateTime?        @map("last_maintenance_at")
+  ownerId             String?          @map("owner_id")
+  groupId             String?          @map("group_id")
+  status              PropertyStatus   @default(AVAILABLE) @map("status")
+  createdAt           DateTime         @default(now()) @map("created_at")
+  owner               Player?          @relation("PropertyOwner", fields: [ownerId], references: [id])
+  group               Group?           @relation(fields: [groupId], references: [id])
+  rentalContracts     RentalContract[]
+  loansCollateral     Loan[]           @relation("LoanCollateralProperty")
+
+  @@index([ownerId])
+  @@index([status])
+  @@index([isListedForRent])
+  @@map("properties")
+}
+
+model RentalContract {
+  id          String   @id @default(uuid()) @map("id")
+  propertyId  String   @map("property_id")
+  tenantId    String   @map("tenant_id")
+  monthlyRent Decimal  @map("monthly_rent")
+  startedAt   DateTime @default(now()) @map("started_at")
+  expiresAt   DateTime @map("expires_at")
+  isActive    Boolean  @default(true) @map("is_active")
+  property    Property @relation(fields: [propertyId], references: [id])
+  tenant      Player   @relation("TenantPlayer", fields: [tenantId], references: [id])
+
+  @@index([tenantId])
+  @@map("rental_contracts")
+}
+
+model BankAccount {
+  id                 String            @id @default(uuid()) @map("id")
+  /// یک حساب برای هر بازیکن — یکتایی در سطح دیتابیس، نه فقط در کد.
+  playerId           String            @unique @map("player_id")
+  cardNumber         String            @unique @map("card_number")
+  balance            Decimal           @default(0) @map("balance")
+  interestRateAnnual Decimal           @default(0.15) @map("interest_rate_annual")
+  lastInterestAt     DateTime          @default(now()) @map("last_interest_at")
+  status             BankAccountStatus @default(ACTIVE) @map("status")
+  createdAt          DateTime          @default(now()) @map("created_at")
+  updatedAt          DateTime          @updatedAt @map("updated_at")
+  player             Player            @relation(fields: [playerId], references: [id])
+
+  @@map("bank_accounts")
+}
+
+/// صندوق بانک — تنها منبع واقعی وام‌دهی و سود سپرده.
+///
+/// چرا وجود دارد؟ پیش از این «پول وام» در لحظهٔ پرداخت از هیچ ساخته می‌شد و
+/// سود سپرده هم از هیچ ساخته می‌شد؛ فقط یک ردیف دفتر کل می‌گذاشت. حالا بانک
+/// یک ترازنامهٔ واقعی دارد: سپرده‌های مردم به صندوق می‌ریزد، وام از همین
+/// صندوق پرداخت می‌شود، بازپرداخت‌ها به آن برمی‌گردد و سود سپرده از آن
+/// بیرون می‌آید. یک ردیف ثابت با شناسهٔ `main`.
+model BankPool {
+  id                   String   @id @default("main") @map("id")
+  balance              Decimal  @default(0) @map("balance")
+  totalDeposited       Decimal  @default(0) @map("total_deposited")
+  totalDisbursed       Decimal  @default(0) @map("total_disbursed")
+  totalRepaid          Decimal  @default(0) @map("total_repaid")
+  totalLoanInterest    Decimal  @default(0) @map("total_loan_interest")
+  totalDepositInterest Decimal  @default(0) @map("total_deposit_interest")
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+
+  @@map("bank_pool")
+}
+
+model Loan {
+  id                   String     @id @default(uuid()) @map("id")
+  playerId             String     @map("player_id")
+  principalAmount      Decimal    @map("principal_amount")
+  totalRepaymentAmount Decimal    @map("total_repayment_amount")
+  remainingAmount      Decimal    @map("remaining_amount")
+  interestRatePercent  Decimal    @map("interest_rate_percent")
+  collateralPropertyId String?    @map("collateral_property_id")
+  collateralBusinessId String?    @map("collateral_business_id")
+  status               LoanStatus @default(ACTIVE) @map("status")
+  disbursedAt          DateTime   @default(now()) @map("disbursed_at")
+  dueAt                DateTime   @map("due_at")
+  player               Player     @relation(fields: [playerId], references: [id])
+  collateralProperty   Property?  @relation("LoanCollateralProperty", fields: [collateralPropertyId], references: [id])
+  collateralBusiness   Business?  @relation("LoanCollateralBusiness", fields: [collateralBusinessId], references: [id])
+
+  @@index([playerId, status])
+  @@map("loans")
+}
+
+model Election {
+  id         String              @id @default(uuid()) @map("id")
+  groupId    String              @map("group_id")
+  title      String              @map("title")
+  status     ElectionStatus      @default(UPCOMING) @map("status")
+  startedAt  DateTime            @default(now()) @map("started_at")
+  endsAt     DateTime            @map("ends_at")
+  winnerId   String?             @map("winner_id")
+  group      Group               @relation(fields: [groupId], references: [id])
+  votes      Vote[]
+  candidates ElectionCandidate[]
+
+  @@index([groupId, status])
+  @@map("elections")
+}
+
+model Vote {
+  id          String   @id @default(uuid()) @map("id")
+  electionId  String   @map("election_id")
+  voterId     String   @map("voter_id")
+  candidateId String   @map("candidate_id")
+  createdAt   DateTime @default(now()) @map("created_at")
+  election    Election @relation(fields: [electionId], references: [id])
+  voter       Player   @relation(fields: [voterId], references: [id])
+
+  @@unique([electionId, voterId])
+  @@map("votes")
+}
+
+model WorkSession {
+  id            String            @id @default(uuid()) @map("id")
+  playerId      String            @map("player_id")
+  jobKey        String            @map("job_key")
+  jobTitle      String            @map("job_title")
+  sessionType   WorkSessionType   @default(PART_TIME) @map("session_type")
+  businessId    String?           @map("business_id")
+  startedAt     DateTime          @default(now()) @map("started_at")
+  endedAt       DateTime?         @map("ended_at")
+  status        WorkSessionStatus @default(ACTIVE) @map("status")
+  payPerMinute  Decimal           @map("pay_per_minute")
+  earnedMoney   Decimal           @default(0) @map("earned_money")
+  earnedExp     Int               @default(0) @map("earned_exp")
+  healthDrain   Int               @default(0) @map("health_drain")
+  fatigueGained Int               @default(0) @map("fatigue_gained")
+  player        Player            @relation(fields: [playerId], references: [id])
+  business      Business?         @relation(fields: [businessId], references: [id])
+
+  @@index([playerId, status])
+  // قید «یک نوبت کاریِ فعال برای هر بازیکن» عمدتاً فقط در مهاجرتِ
+  // 20260912010000_one_active_work_session_per_player ساخته می‌شود
+  // (شاخص یکتای جزئی روی status='ACTIVE')، چون Prisma شاخصِ جزئی را در
+  // schema اعلام نمی‌کند. همان الگویی که برای «یک قرارداد اجارهٔ فعال»،
+  // «یک وام فعال» و «یک انتخاباتِ باز» هم به کار رفته است.
+  @@map("work_sessions")
+}
+
+model Business {
+  id                     String                 @id @default(uuid()) @map("id")
+  ownerId                String                 @map("owner_id")
+  name                   String                 @map("name")
+  category               BusinessCategory       @map("category")
+  modelType              String                 @map("model_type")
+  level                  Int                    @default(1) @map("level")
+  treasury               Decimal                @default(0) @map("treasury")
+  employeeCapacity       Int                    @default(5) @map("employee_capacity")
+  /// شمارندهٔ کارمندان فعال؛ تنها مرجع ظرفیت (گارد اتمیک در استخدام)
+  activeEmployees        Int                    @default(0) @map("active_employees")
+  productionUnitsPerHour Decimal                @default(10) @map("production_units_per_hour")
+  operatingCostPerMinute Decimal                @default(0) @map("operating_cost_per_minute")
+  baseRevenuePerMinute   Decimal                @default(0) @map("base_revenue_per_minute")
+  status                 BusinessStatus         @default(ACTIVE) @map("status")
+  lastPayrollAt          DateTime               @default(now()) @map("last_payroll_at")
+  totalRevenue           Decimal                @default(0) @map("total_revenue")
+  totalPayroll           Decimal                @default(0) @map("total_payroll")
+  totalOperatingCost     Decimal                @default(0) @map("total_operating_cost")
+  createdAt              DateTime               @default(now()) @map("created_at")
+  updatedAt              DateTime               @updatedAt @map("updated_at")
+  owner                  Player                 @relation("BusinessOwner", fields: [ownerId], references: [id])
+  employees              BusinessEmployee[]
+  branches               BusinessBranch[]
+  jobPostings            JobPosting[]
+  workSessions           WorkSession[]
+  loansCollateral        Loan[]                 @relation("LoanCollateralBusiness")
+  transactionsFrom       FinancialTransaction[] @relation("SourceBusiness")
+  transactionsTo         FinancialTransaction[] @relation("DestinationBusiness")
+
+  @@index([ownerId])
+  @@index([status, lastPayrollAt])
+  @@map("businesses")
+}
+
+model BusinessEmployee {
+  id                      String      @id @default(uuid()) @map("id")
+  businessId              String      @map("business_id")
+  playerId                String      @map("player_id")
+  title                   String      @map("title")
+  salaryPerMinute         Decimal     @map("salary_per_minute")
+  /// حجمِ قرارداد: چند دقیقهٔ *بازی* کار در هر ماهِ بازی (۳۰ روز بازی).
+  /// حقوق فراتر از این سقف پرداخت نمی‌شود؛ پیش‌فرض = کار تمام‌وقت (۲۴۰ ساعت بازی).
+  contractMinutesPerMonth Int         @default(14400) @map("contract_minutes_per_month")
+  unpaidSalary            Decimal     @default(0) @map("unpaid_salary")
+  hiredAt                 DateTime    @default(now()) @map("hired_at")
+  /// تا این لحظه حقوق تسویه شده (لنگر پرداخت؛ جدایی و تسویهٔ کل با هم دو‌بارحقوق نمی‌دهند)
+  paidUntilAt             DateTime?   @map("paid_until_at")
+  isActive                Boolean     @default(true) @map("is_active")
+  /// از کدام آگهی استخدام شده — تا هنگامِ جدایی، صندلیِ همان آگهی آزاد شود.
+  /// برای استخدام‌های قدیمی null است و در آن صورت صندلی آزاد نمی‌شود.
+  jobPostingId            String?     @map("job_posting_id")
+  business                Business    @relation(fields: [businessId], references: [id])
+  player                  Player      @relation("EmployeePlayer", fields: [playerId], references: [id])
+  jobPosting              JobPosting? @relation(fields: [jobPostingId], references: [id])
+
+  @@unique([businessId, playerId])
+  @@index([playerId])
+  @@index([jobPostingId])
+  @@map("business_employees")
+}
+
+model JobPosting {
+  id                      String             @id @default(uuid()) @map("id")
+  businessId              String             @map("business_id")
+  title                   String             @map("title")
+  requiredSkill           String?            @map("required_skill")
+  requiredDegree          DegreeLevel        @default(DIPLOMA) @map("required_degree")
+  requiredField           String?            @map("required_field")
+  minExperience           Int                @default(0) @map("min_experience")
+  /// محدودیت سنی آگهی (null یعنی بدون شرط سن)
+  minAge                  Int?               @map("min_age")
+  maxAge                  Int?               @map("max_age")
+  salaryPerMinute         Decimal            @map("salary_per_minute")
+  /// حجمِ کارِ پیشنهادی این آگهی (دقیقهٔ بازی در هر ماهِ بازی)؛ هنگام استخدام به قرارداد منتقل می‌شود.
+  contractMinutesPerMonth Int                @default(14400) @map("contract_minutes_per_month")
+  capacity                Int                @default(1) @map("capacity")
+  /// چند نفر از این آگهی استخدام شده‌اند (گارد اتمیک ظرفیت آگهی)
+  hiredCount              Int                @default(0) @map("hired_count")
+  status                  JobPostingStatus   @default(OPEN) @map("status")
+  /// آیا خودِ کارفرما آگهی را بسته است؟ بسته‌شدنِ خودکار (پُرشدنِ ظرفیت)
+  /// این را true نمی‌کند، پس با خالی‌شدنِ صندلی دوباره باز می‌شود.
+  closedByOwner           Boolean            @default(false) @map("closed_by_owner")
+  createdAt               DateTime           @default(now()) @map("created_at")
+  business                Business           @relation(fields: [businessId], references: [id])
+  applications            JobApplication[]
+  employees               BusinessEmployee[]
+
+  @@index([businessId, status])
+  @@index([status, createdAt])
+  @@map("job_postings")
+}
+
+model JobApplication {
+  id           String               @id @default(uuid()) @map("id")
+  jobPostingId String               @map("job_posting_id")
+  playerId     String               @map("player_id")
+  status       JobApplicationStatus @default(PENDING) @map("status")
+  createdAt    DateTime             @default(now()) @map("created_at")
+  updatedAt    DateTime             @updatedAt @map("updated_at")
+  jobPosting   JobPosting           @relation(fields: [jobPostingId], references: [id])
+  player       Player               @relation("PlayerApplications", fields: [playerId], references: [id])
+
+  @@unique([jobPostingId, playerId])
+  @@index([playerId])
+  @@map("job_applications")
+}
+
+model FinancialTransaction {
+  id                    String          @id @default(uuid()) @map("id")
+  amount                Decimal         @map("amount")
+  type                  TransactionType @map("type")
+  reference             String?         @map("reference")
+  sourcePlayerId        String?         @map("source_player_id")
+  destinationPlayerId   String?         @map("destination_player_id")
+  sourceBusinessId      String?         @map("source_business_id")
+  destinationBusinessId String?         @map("destination_business_id")
+  createdAt             DateTime        @default(now()) @map("created_at")
+  sourcePlayer          Player?         @relation("SourcePlayer", fields: [sourcePlayerId], references: [id])
+  destinationPlayer     Player?         @relation("DestinationPlayer", fields: [destinationPlayerId], references: [id])
+  sourceBusiness        Business?       @relation("SourceBusiness", fields: [sourceBusinessId], references: [id])
+  destinationBusiness   Business?       @relation("DestinationBusiness", fields: [destinationBusinessId], references: [id])
+
+  @@index([sourcePlayerId])
+  @@index([destinationPlayerId])
+  @@index([sourceBusinessId])
+  @@index([destinationBusinessId])
+  @@index([destinationPlayerId, type])
+  @@index([sourcePlayerId, createdAt])
+  @@index([destinationPlayerId, createdAt])
+  /// جمعِ روزانهٔ انتقال‌های بانکیِ خروجی یک بازیکن (سقفِ روزانهٔ انتقال)
+  @@index([sourcePlayerId, type, createdAt])
+  @@map("financial_transactions")
+}
+
+model JobCapacity {
+  jobKey    String   @id @map("job_key")
+  capacity  Int      @default(0) @map("capacity")
+  occupied  Int      @default(0) @map("occupied")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("job_capacities")
+}
+
+model AdminLog {
+  id           String   @id @default(uuid()) @map("id")
+  actorUserId  BigInt   @map("actor_user_id")
+  action       String   @map("action")
+  targetUserId BigInt?  @map("target_user_id")
+  details      Json?    @map("details")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@index([actorUserId])
+  @@index([actorUserId, createdAt])
+  @@index([targetUserId])
+  @@index([createdAt])
+  @@map("admin_logs")
+}
+
+/// سطح دسترسی ادمین ربات. OWNER تنها کسی است که می‌تواند ادمین اضافه/حذف کند.
+enum BotAdminRole {
+  OWNER
+  ADMIN
+}
+
+/// فهرست ادمین‌های ربات — منبع حقیقت دسترسی مدیریت (نه متغیر محیطی).
+///
+/// نقش‌های مدیریت *ربات* از نقش‌های محلی *بازی* (`PlayerGroup.role`) کاملاً
+/// جدا هستند. حذف یک ردیف از این جدول هیچ داده‌ای از `players` پاک نمی‌کند.
+model BotAdmin {
+  id             String       @id @default(uuid()) @map("id")
+  telegramUserId BigInt       @unique @map("telegram_user_id")
+  firstName      String?      @map("first_name")
+  username       String?
+  role           BotAdminRole @default(ADMIN) @map("role")
+  isActive       Boolean      @default(true) @map("is_active")
+  grantedBy      BigInt?      @map("granted_by")
+  createdAt      DateTime     @default(now()) @map("created_at")
+  updatedAt      DateTime     @updatedAt @map("updated_at")
+
+  @@index([isActive])
+  @@map("bot_admins")
+}
+
+/// اخطار مدیریتیِ ثبت‌شده برای یک بازیکن.
+///
+/// سه اخطار *فعال* = مسدودسازی خودکار (`WARNING_BAN_THRESHOLD` در سرویس مدیریت).
+/// اخطارها پس از بن پاک نمی‌شوند تا دلیل مسدودسازی برای ادمین بعدی قابل خواندن
+/// بماند؛ «لغو اخطار» فقط برای اشتباهِ خودِ ادمین است و مسدودسازی را خودکار
+/// برنمی‌گرداند (بازگرداندن دسترسی یک تصمیم جداگانه است).
+model PlayerWarning {
+  id        String    @id @default(uuid()) @map("id")
+  playerId  String    @map("player_id")
+  /// ادمینی که اخطار را ثبت کرده است (شناسهٔ تلگرام، مانند `admin_logs`).
+  issuedBy  BigInt    @map("issued_by")
+  reason    String    @map("reason")
+  /// آیا این اخطار هنوز شمرده می‌شود؟ لغوشده = `false`.
+  isActive  Boolean   @default(true) @map("is_active")
+  /// این اخطار همان اخطار سومی بود که مسدودسازی خودکار را رقم زد؟
+  causedBan Boolean   @default(false) @map("caused_ban")
+  createdAt DateTime  @default(now()) @map("created_at")
+  revokedAt DateTime? @map("revoked_at")
+  player    Player    @relation("PlayerWarnings", fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@index([playerId, isActive])
+  @@index([issuedBy])
+  @@map("player_warnings")
+}
+
+/// دستهٔ گزارش بازیکن — به ادمین می‌گوید از کجا شروع کند.
+enum PlayerReportCategory {
+  /// ایراد فنی: دکمهٔ بی‌اثر، خطای غیرمنتظره، جریانِ نیمه‌کاره.
+  BUG
+  /// مشکل مالی: کسر/واریز نادرست، تراکنش گمشده.
+  MONEY
+  /// رفتار بازیکن دیگر.
+  BEHAVIOR
+  /// سایر موارد.
+  OTHER
+}
+
+/// وضعیت رسیدگی به گزارش.
+enum PlayerReportStatus {
+  /// ثبت شده و هنوز پاسخی نگرفته.
+  OPEN
+  /// ادمین پاسخ داده و بازیکن اعلان گرفته است.
+  ANSWERED
+  /// بسته‌شده بدون نیاز به ادامهٔ گفت‌وگو.
+  CLOSED
+}
+
+///
+/// گزارش بازیکن به تیم پشتیبانی.
+///
+/// چرا این جدول لازم است؟ بازیکن هیچ راهِ رسمی برای رساندنِ مشکل به ادمین
+/// نداشت؛ ایرادها فقط شفاهی در گروه گفته می‌شدند و هیچ سابقه‌ای نمی‌ماند —
+/// پس اشکال‌ها دوباره و دوباره گزارش و دوباره کشف می‌شدند. این جدول همان
+/// مسیر را ماندگار، صفحه‌بندی‌شدنی و قابلِ‌پاسخ می‌کند.
+///
+/// قاعدهٔ مهم: گزارش هرگز به‌صورت خودکار پول یا وضعیت کسی را تغییر نمی‌دهد;
+/// فقط یک صندوقِ ورودیِ مدیریتی است. هر اصلاح واقعی از مسیر عادیِ ادمین و با
+/// گزارش مدیریت انجام می‌شود.
+model PlayerReport {
+  id         String               @id @default(uuid()) @map("id")
+  playerId   String               @map("player_id")
+  category   PlayerReportCategory @default(OTHER) @map("category")
+  body       String               @map("body")
+  /// بخشی که بازیکن هنگام گزارش در آن بود (برای عیب‌یابی؛ اختیاری).
+  section    String?              @map("section")
+  status     PlayerReportStatus   @default(OPEN) @map("status")
+  /// پاسخ ادمین؛ تا وقتی پاسخ داده نشده `null` است.
+  answer     String?              @map("answer")
+  /// شناسهٔ تلگرامِ ادمینی که پاسخ داده (مثل `player_warnings.issued_by`).
+  answeredBy BigInt?              @map("answered_by")
+  answeredAt DateTime?            @map("answered_at")
+  createdAt  DateTime             @default(now()) @map("created_at")
+  updatedAt  DateTime             @updatedAt @map("updated_at")
+  player     Player               @relation("PlayerReports", fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@index([status, createdAt])
+  @@index([playerId, createdAt])
+  @@map("player_reports")
+}
+
+enum MigrationReason {
+  FIRST_SETTLEMENT
+  VOLUNTARY
+  ADMIN_ACTION
+}
+
+/// سابقهٔ تغییر اقامت بازیکن (Audit)
+model Migration {
+  id          String          @id @default(uuid()) @map("id")
+  playerId    String          @map("player_id")
+  fromGroupId String?         @map("from_group_id")
+  toGroupId   String          @map("to_group_id")
+  reason      MigrationReason @map("reason")
+  cost        Decimal         @default(0) @map("cost")
+  createdAt   DateTime        @default(now()) @map("created_at")
+  player      Player          @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  fromGroup   Group?          @relation("MigrationFrom", fields: [fromGroupId], references: [id])
+  toGroup     Group           @relation("MigrationTo", fields: [toGroupId], references: [id])
+
+  @@index([playerId, createdAt])
+  @@index([toGroupId])
+  @@map("migrations")
+}
+
+/// پروژهٔ عمومی منطقه؛ با کمک مالی ساکنان تکمیل و برای همه فعال می‌شود
+model RegionProject {
+  id                String            @id @default(uuid()) @map("id")
+  groupId           String            @map("group_id")
+  key               String            @map("key")
+  title             String            @map("title")
+  description       String            @map("description")
+  targetAmount      Decimal           @map("target_amount")
+  collectedAmount   Decimal           @default(0) @map("collected_amount")
+  isCompleted       Boolean           @default(false) @map("is_completed")
+  group             Group             @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  startedByPlayerId String?           @map("started_by_player_id")
+  /// لحظهٔ «آغاز رسمی» توسط شهردار — جدا از `createdAt` که فقط ساختِ ردیف است.
+  startedAt         DateTime?         @map("started_at")
+  createdAt         DateTime          @default(now()) @map("created_at")
+  completedAt       DateTime?         @map("completed_at")
+  /// آیا خبرِ تکمیلِ پروژه به منطقه اعلام شد؟
+  ///
+  /// چرا ستون لازم است؟ اعلام، یک رخداد خبری است — نه یک نوشتار دیتابیسی.
+  /// اگر ربات بین «تکمیل شدنِ پروژه» و «ثبت خبر» یک بار پایین بیاید، پروژه
+  /// تکمیلشده می‌ماند ولی هیچ‌کس هرگز خبرش را نمی‌شنود (چون مسیر تکمیل دیگر
+  /// اجرا نمی‌شود). این ستون همان اعلام را قابل‌ترمیم و یک‌باره می‌کند.
+  announcedAt       DateTime?         @map("announced_at")
+  donations         ProjectDonation[]
+
+  @@unique([groupId, key])
+  @@index([groupId, isCompleted])
+  /// چرخهٔ ترمیمِ اعلامِ تکمیل با «تکمیل‌شده و اعلام‌نشده» می‌گردد.
+  @@index([isCompleted, announcedAt])
+  @@map("region_projects")
+}
+
+/// یک مشارکتِ مالی در پروژهٔ شهری — رکوردِ جدا و قابل‌ردیابی هر اهدا.
+///
+/// ## چرا این مدل لازم شد؟
+/// پیش از این تنها ردی از یک کمک، یک `FinancialTransaction` با متنِ آزاد در
+/// `reference` بود. یعنی:
+///   • بازیکن نمی‌توانست ببیند چقدر و به کدام پروژه کمک کرده؛
+///   • تعداد مشارکت‌کنندگانِ یک پروژه قابل‌شمردن نبود؛
+///   • و مهم‌تر از همه، هیچ راهی نبود ثابت کنیم
+///     `RegionProject.collectedAmount` واقعاً برابر جمعِ کمک‌های معتبر است.
+///
+/// سه ستونِ پولِ دفتر کل (مبلغ، اهداکننده، مبلغ پیش/پس از کمک) عمداً تکرار
+/// نشده‌اند: مبلغ در `FinancialTransaction` و پیشرفت در `RegionProject`
+/// زندگی می‌کند و تکرارشان دو منبعِ حقیقتِ واگرا می‌ساخت.
+model ProjectDonation {
+  id        String        @id @default(uuid()) @map("id")
+  projectId String        @map("project_id")
+  /// منطقهٔ پروژه — در رکورد تکرار می‌شود تا تاریخچهٔ کمک‌های بازیکن و
+  /// ممیزیِ منطقه لازم نباشد از روی پروژه join بزند.
+  groupId   String        @map("group_id")
+  /// اهداکننده — اختیاری و `SetNull`، مثلِ طرف‌های `FinancialTransaction`.
+  /// رکورد کمک سندِ مالی است: پول واقعاً خرج شده و پیشرفت پروژه با آن ساخته
+  /// شده، پس حذفِ حساب اهداکننده نباید آن را پاک کند (وگرنه
+  /// «جمع کمک‌ها = پیشرفت پروژه» برای همیشه می‌شکند).
+  donorId   String?       @map("donor_id")
+  /// نامِ اهداکننده در لحظهٔ کمک — عکسِ لحظه‌ای، تا سابقه پس از حذفِ حساب
+  /// هم خواندنی بماند بدون اینکه به یک رابطهٔ تهی تکیه کند.
+  donorName String        @map("donor_name")
+  amount    Decimal       @map("amount")
+  /// روزِ بازیِ کمک — همان مبنایی که بقیهٔ رخدادهای روزانه با آن گره خورده‌اند.
+  gameDay   Int           @map("game_day")
+  createdAt DateTime      @default(now()) @map("created_at")
+  project   RegionProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  donor     Player?       @relation("PlayerDonations", fields: [donorId], references: [id], onDelete: SetNull)
+
+  @@index([donorId, createdAt])
+  @@index([projectId, createdAt])
+  @@map("project_donations")
+}
+
+/// بلیت قرعه‌کشی هفتگی؛ هر بازیکن در هر منطقه هفته‌ای یک بلیت
+model LotteryTicket {
+  id        String   @id @default(uuid()) @map("id")
+  groupId   String   @map("group_id")
+  playerId  String   @map("player_id")
+  weekKey   Int      @map("week_key")
+  price     Decimal  @map("price")
+  group     Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  player    Player   @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([groupId, playerId, weekKey])
+  @@index([groupId, weekKey])
+  @@map("lottery_tickets")
+}
+
+/// آگهی فروش آیتم بین بازیکنان (Escrow اتمیک)
+model MarketListing {
+  id             String    @id @default(uuid()) @map("id")
+  sellerPlayerId String    @map("seller_player_id")
+  itemId         String    @map("item_id")
+  itemName       String    @map("item_name")
+  quantity       Int       @map("quantity")
+  unitPrice      Decimal   @map("unit_price")
+  status         String    @default("ACTIVE") @map("status")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  seller         Player    @relation("MarketSeller", fields: [sellerPlayerId], references: [id], onDelete: Cascade)
+  item           ShopItem  @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  expiresAt      DateTime  @map("expires_at")
+  soldAt         DateTime? @map("sold_at")
+
+  @@index([status, expiresAt])
+  @@index([sellerPlayerId])
+  @@map("market_listings")
+}
+
+/// معرفی بازیکن جدید (پاداش دومرحله‌ای)
+model Referral {
+  id               String    @id @default(uuid()) @map("id")
+  referrerPlayerId String    @map("referrer_player_id")
+  refereePlayerId  String    @unique @map("referee_player_id")
+  referrer         Player    @relation("Referrer", fields: [referrerPlayerId], references: [id], onDelete: Cascade)
+  referee          Player    @relation("Referee", fields: [refereePlayerId], references: [id], onDelete: Cascade)
+  rewardedAt       DateTime? @map("rewarded_at")
+  bonusPaidAt      DateTime? @map("bonus_paid_at")
+  createdAt        DateTime  @default(now()) @map("created_at")
+
+  @@index([referrerPlayerId])
+  @@map("referrals")
+}
+
+/// نامزد انتخابات منطقه
+model ElectionCandidate {
+  id         String   @id @default(uuid()) @map("id")
+  electionId String   @map("election_id")
+  playerId   String   @map("player_id")
+  joinedAt   DateTime @default(now()) @map("joined_at")
+  election   Election @relation(fields: [electionId], references: [id], onDelete: Cascade)
+  player     Player   @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@unique([electionId, playerId])
+  @@map("election_candidates")
+}
+
+enum EventScope {
+  PLAYER
+  REGION
+}
+
+enum GameEventType {
+  JOB_STARTED
+  JOB_APPLIED
+  JOB_FINISHED
+  SALARY_RECEIVED
+  HOUSE_PURCHASED
+  HOUSE_RENTED
+  BANK_DEPOSIT
+  BANK_WITHDRAW
+  LOAN_CREATED
+  LOAN_REPAID
+  EDUCATION_ENROLLED
+  EDUCATION_COMPLETED
+  COMPANY_CREATED
+  COMPANY_UPGRADED
+  MARKET_TRANSACTION
+  ACHIEVEMENT_UNLOCKED
+  REGION_REGISTERED
+  REGION_LEVEL_CHANGED
+  REGION_POPULATION_MILESTONE
+  REGION_ECONOMY_SHIFT
+  REGION_WEALTH_RECORD
+  REGION_BIG_TRANSACTION
+  RESIDENCE_ESTABLISHED
+  RESIDENCE_MIGRATED
+  PLAYER_TRAVELED
+  PAYROLL_SETTLED
+  PAYROLL_DEBT
+  STREAK_CLAIMED
+  OVERTIME_WORKED
+  RENT_INCOME
+  /// آغازِ رسمیِ یک پروژهٔ شهری توسط شهردارِ فعال (تصمیمِ مدیریتی، بدون جابه‌جایی پول)
+  PROJECT_STARTED
+  PROJECT_COMPLETED
+  LOTTERY_TICKET
+  LOTTERY_WON
+  ELECTION_WON
+  ITEM_SOLD
+  PLAYER_REFERRED
+  QUEST_COMPLETED
+  WEEKLY_CHEST
+  MEDICAL_TREATMENT
+  DEPOSIT_MATURED
+  TRAVEL_STAMP
+  MARRIAGE_REGISTERED
+  DIVORCE_REGISTERED
+  /// فوتِ همسر و بسته‌شدنِ ازدواج با علتِ WIDOWED — پایانِ طبیعیِ زندگیِ مشترک
+  WIDOWHOOD_REGISTERED
+  PET_ADOPTED
+  PET_FED
+  /// بازی و وقتِ گذراندن با حیوانِ سالم (روزی یک بار)
+  PET_PLAY
+  /// هدیهٔ روزانهٔ حیوانِ خوشحال — جدا از PET_FED تا تاریخچه و ممیزی درست بماند
+  PET_GIFT
+  STOCK_TRANSACTION
+  AUCTION_WON
+  GYM_SUBSCRIBED
+  P2P_LOAN_SETTLED
+  FARM_HARVESTED
+  ITEM_CRAFTED
+  CHALLENGE_COMPLETED
+  /// نوشتن یا تغییرِ وارث در وصیت (تصمیمِ زندگی، بدون جابه‌جایی پول)
+  WILL_UPDATED
+  /// برداشتنِ وارث — پروندهٔ میراث بدون گیرنده می‌ماند تا بازیکن تصمیم تازه بگیرد
+  WILL_CANCELLED
+  /// فوتِ شخصیت — منبعِ پروندهٔ میراث؛ هر مرگ فقط یک‌بار ثبت می‌شود
+  PLAYER_DIED
+  /// انتقالِ دارایی به وارث (پول، ملک، کسب‌وکار) — پایانِ پروندهٔ میراث
+  INHERITANCE_SETTLED
+  BRANCH_OPENED
+  MAYOR_POLICY_SET
+  NEWS_AD_PUBLISHED
+  /// سررسیدگذشتن و نکولِ وام بانکی — تملک وثیقه و جریمهٔ اعتبار
+  LOAN_DEFAULTED
+}
+
+enum RankingScope {
+  GROUP
+  GLOBAL
+  REGION
+}
+
+/// رخدادهای بازی: هم تاریخچهٔ بازیکن و هم منبع اخبار منطقه
+model GameEvent {
+  id          String        @id @default(uuid()) @map("id")
+  scope       EventScope    @map("scope")
+  type        GameEventType @map("type")
+  priority    Int           @default(1) @map("priority")
+  playerId    String?       @map("player_id")
+  groupId     String?       @map("group_id")
+  title       String        @map("title")
+  detail      String?       @map("detail")
+  amount      Decimal?      @map("amount")
+  dedupeKey   String?       @unique @map("dedupe_key")
+  publishedAt DateTime?     @map("published_at")
+  createdAt   DateTime      @default(now()) @map("created_at")
+  player      Player?       @relation(fields: [playerId], references: [id])
+  group       Group?        @relation(fields: [groupId], references: [id])
+
+  @@index([playerId, createdAt])
+  @@index([groupId, createdAt])
+  @@index([groupId, publishedAt])
+  @@index([scope, priority])
+  @@map("game_events")
+}
+
+/// شاخص‌های تجمیعی هر منطقه؛ برای پرهیز از Full Scan در هر درخواست
+model RegionStat {
+  groupId           String   @id @map("group_id")
+  population        Int      @default(0) @map("population")
+  employed          Int      @default(0) @map("employed")
+  companies         Int      @default(0) @map("companies")
+  properties        Int      @default(0) @map("properties")
+  totalWealth       Decimal  @default(0) @map("total_wealth")
+  bankDeposits      Decimal  @default(0) @map("bank_deposits")
+  totalDebt         Decimal  @default(0) @map("total_debt")
+  averageIncome     Decimal  @default(0) @map("average_income")
+  educatedCount     Int      @default(0) @map("educated_count")
+  transactionVolume Decimal  @default(0) @map("transaction_volume")
+  transactionCount  Int      @default(0) @map("transaction_count")
+  /// صندوق عمومی منطقه: جمعِ واقعیِ مالیات و فروش بلیت، منهای جایزه‌های پرداخت‌شده.
+  /// تنها نویسندهٔ این ستون `modules/economy/tax.service.ts` است؛ بازمحاسبهٔ
+  /// آمار منطقه هرگز آن را صفر نمی‌کند.
+  taxRevenue        Decimal  @default(0) @map("tax_revenue")
+  economicIndex     Int      @default(0) @map("economic_index")
+  previousIndex     Int      @default(0) @map("previous_index")
+  refreshedAt       DateTime @default(now()) @map("refreshed_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+  group             Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@index([economicIndex])
+  @@map("region_stats")
+}
+
+/// رتبه‌بندی‌های محاسبه‌شده و Cache‌شده
+model RankingSnapshot {
+  id         String       @id @default(uuid()) @map("id")
+  scope      RankingScope @map("scope")
+  category   String       @map("category")
+  groupId    String?      @map("group_id")
+  payload    Json         @map("payload")
+  computedAt DateTime     @default(now()) @map("computed_at")
+
+  @@unique([scope, category, groupId])
+  @@index([computedAt])
+  @@map("ranking_snapshots")
+}
+
+model ShopItem {
+  id                 String            @id @default(uuid()) @map("id")
+  key                String            @unique @map("key")
+  name               String            @map("name")
+  description        String            @map("description")
+  category           String            @map("category")
+  price              Decimal           @map("price")
+  rarity             String            @default("common") @map("rarity")
+  stock              Int               @default(-1) @map("stock")
+  effects            Json              @default("{}") @map("effects")
+  active             Boolean           @default(true) @map("active")
+  priceMultiplier    Decimal           @default(1) @map("price_multiplier")
+  previousMultiplier Decimal           @default(1) @map("previous_multiplier")
+  purchaseCount      Int               @default(0) @map("purchase_count")
+  recentPurchases    Int               @default(0) @map("recent_purchases")
+  lastPriceUpdateAt  DateTime          @default(now()) @map("last_price_update_at")
+  createdAt          DateTime          @default(now()) @map("created_at")
+  updatedAt          DateTime          @updatedAt @map("updated_at")
+  marketListings     MarketListing[]
+  inventory          PlayerInventory[]
+
+  @@index([category])
+  @@index([active])
+  @@index([active, lastPriceUpdateAt])
+  @@map("shop_items")
+}
+
+model PlayerInventory {
+  id        String   @id @default(uuid()) @map("id")
+  playerId  String   @map("player_id")
+  itemId    String   @map("item_id")
+  quantity  Int      @default(0) @map("quantity")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  player    Player   @relation(fields: [playerId], references: [id])
+  item      ShopItem @relation(fields: [itemId], references: [id])
+
+  @@unique([playerId, itemId])
+  @@index([itemId])
+  @@index([playerId, quantity])
+  @@map("player_inventory")
+}
+
+/// کارت مأموریت روزانه؛ Unique سه‌گانه پرداخت دوباره را غیرممکن می‌کند
+model DailyQuest {
+  id        String    @id @default(uuid()) @map("id")
+  playerId  String    @map("player_id")
+  dayIndex  Int       @map("day_index")
+  questKey  String    @map("quest_key")
+  progress  Int       @default(0) @map("progress")
+  target    Int       @map("target")
+  claimedAt DateTime? @map("claimed_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+  player    Player    @relation(fields: [playerId], references: [id])
+
+  @@unique([playerId, dayIndex, questKey])
+  @@index([playerId, dayIndex])
+  @@map("daily_quests")
+}
+
+/// صندوق هفتگی کارت‌ها؛ یک بار در هر هفتهٔ تقویمی
+model WeeklyChest {
+  id        String   @id @default(uuid()) @map("id")
+  playerId  String   @map("player_id")
+  weekIndex Int      @map("week_index")
+  amount    Decimal  @map("amount")
+  claimedAt DateTime @default(now()) @map("claimed_at")
+  player    Player   @relation(fields: [playerId], references: [id])
+
+  @@unique([playerId, weekIndex])
+  @@map("weekly_chests")
+}
+
+/// نشان کسب‌شده؛ Unique پرداخت پاداش را یک‌باره می‌کند
+model AchievementGrant {
+  id        String   @id @default(uuid()) @map("id")
+  playerId  String   @map("player_id")
+  key       String   @map("key")
+  reward    Decimal  @map("reward")
+  grantedAt DateTime @default(now()) @map("granted_at")
+  player    Player   @relation(fields: [playerId], references: [id])
+
+  @@unique([playerId, key])
+  @@index([playerId])
+  @@map("achievement_grants")
+}
+
+/// سپردهٔ مدت‌دار؛ سررسید به‌صورت Lazy تسویه می‌شود
+model TermDeposit {
+  id         String            @id @default(uuid()) @map("id")
+  playerId   String            @map("player_id")
+  principal  Decimal           @map("principal")
+  rateAnnual Decimal           @map("rate_annual")
+  termDays   Int               @map("term_days")
+  openedAt   DateTime          @default(now()) @map("opened_at")
+  maturesAt  DateTime          @map("matures_at")
+  status     TermDepositStatus @default(ACTIVE) @map("status")
+  payout     Decimal?          @map("payout")
+  settledAt  DateTime?         @map("settled_at")
+  player     Player            @relation(fields: [playerId], references: [id])
+
+  @@index([playerId, status])
+  @@map("term_deposits")
+}
+
+enum TermDepositStatus {
+  ACTIVE
+  PAID
+  BROKEN
+}
+
+/// شانس روزانه؛ Unique روزانه نتیجه را قطعی و یک‌باره می‌کند
+model DailyFortune {
+  id       String   @id @default(uuid()) @map("id")
+  playerId String   @map("player_id")
+  dayIndex Int      @map("day_index")
+  kind     String   @map("kind")
+  amount   Decimal  @default(0) @map("amount")
+  message  String   @map("message")
+  drawnAt  DateTime @default(now()) @map("drawn_at")
+  player   Player   @relation(fields: [playerId], references: [id])
+
+  @@unique([playerId, dayIndex])
+  @@map("daily_fortunes")
+}
+
+/// بیمهٔ درمان؛ فقط یک بیمهٔ فعال در هر زمان
+model InsurancePolicy {
+  id          String   @id @default(uuid()) @map("id")
+  playerId    String   @map("player_id")
+  premium     Decimal  @map("premium")
+  coverRate   Decimal  @map("cover_rate")
+  startedAt   DateTime @default(now()) @map("started_at")
+  coversUntil DateTime @map("covers_until")
+  player      Player   @relation(fields: [playerId], references: [id])
+
+  @@index([playerId, coversUntil])
+  @@map("insurance_policies")
+}
+
+/// مُهر سفر؛ اولین حضور معتبر در هر منطقه
+model TravelStamp {
+  id        String   @id @default(uuid()) @map("id")
+  playerId  String   @map("player_id")
+  groupId   String   @map("group_id")
+  stampedAt DateTime @default(now()) @map("stamped_at")
+  player    Player   @relation(fields: [playerId], references: [id])
+  group     Group    @relation(fields: [groupId], references: [id])
+
+  @@unique([playerId, groupId])
+  @@index([playerId])
+  @@map("travel_stamps")
+}
+
+/// ازدواج بین دو بازیکن
+/// علتِ پایانِ یک ازدواج — طلاق یا فوتِ یکی از زوجین.
+/// پیش از این فقط `divorcedAt` وجود داشت و ازدواجِ تمام‌شده با فوتِ همسر
+/// هیچ‌وقت بسته نمی‌شد؛ حالا هر پایانِ ازدواج علتِ صریح دارد.
+enum MarriageEndReason {
+  DIVORCED
+  WIDOWED
+}
+
+model Marriage {
+  id                   String             @id @default(uuid()) @map("id")
+  playerAId            String             @map("player_a_id")
+  playerBId            String             @map("player_b_id")
+  mahr                 Decimal            @map("mahr")
+  isActive             Boolean            @default(true) @map("is_active")
+  marriedAt            DateTime           @default(now()) @map("married_at")
+  divorcedAt           DateTime?          @map("divorced_at")
+  /// لحظهٔ پایانِ ازدواج (طلاق یا فوت) — `divorcedAt` فقط برای سازگاریِ عقب‌گرد می‌ماند.
+  endedAt              DateTime?          @map("ended_at")
+  /// علتِ پایان: `DIVORCED` یا `WIDOWED`.
+  endReason            MarriageEndReason? @map("end_reason")
+  lastBonusDayIndex    Int?               @map("last_bonus_day_index")
+  /// شماره روزِ آخرین «وقت مشترک» — قفل روزانهٔ فعالیت مشترک زوجین.
+  lastActivityDayIndex Int?               @map("last_activity_day_index")
+  /// لنگر فرسایش گرما: آخرین لحظه‌ای که گرمای رابطه لمس شد.
+  lastWarmthAt         DateTime?          @map("last_warmth_at")
+  playerA              Player             @relation("MarriageInitiator", fields: [playerAId], references: [id])
+  playerB              Player             @relation("MarriageReceiver", fields: [playerBId], references: [id])
+
+  @@index([playerAId, isActive])
+  @@index([playerBId, isActive])
+  @@map("marriages")
+}
+
+/// پیشنهاد خواستگاری در جریان
+model MarriageProposal {
+  id         String   @id @default(uuid()) @map("id")
+  proposerId String   @map("proposer_id")
+  targetId   String   @map("target_id")
+  mahr       Decimal  @map("mahr")
+  status     String   @default("PENDING") @map("status")
+  createdAt  DateTime @default(now()) @map("created_at")
+  proposer   Player   @relation("ProposalsMade", fields: [proposerId], references: [id])
+  target     Player   @relation("ProposalsReceived", fields: [targetId], references: [id])
+
+  @@index([targetId, status])
+  @@map("marriage_proposals")
+}
+
+/// حیوان خانگی
+model Pet {
+  id                String   @id @default(uuid()) @map("id")
+  playerId          String   @unique @map("player_id")
+  kind              String   @map("kind")
+  name              String   @map("name")
+  hunger            Int      @default(0) @map("hunger")
+  mood              Int      @default(100) @map("mood")
+  lastFedAt         DateTime @default(now()) @map("last_fed_at")
+  adoptedAt         DateTime @default(now()) @map("adopted_at")
+  lastBonusDayIndex Int?     @map("last_bonus_day_index")
+  // `playerId` یکتاست و همان یونیک‌ایندکس کفایت می‌کند؛ ایندکس تکراری ساخته نمی‌شود
+  player            Player   @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@map("pets")
+}
+
+/// حراجی هفتگی آیتم‌های کمیاب در منطقه
+model Auction {
+  id              String       @id @default(uuid()) @map("id")
+  groupId         String       @map("group_id")
+  itemKey         String       @map("item_key")
+  itemName        String       @map("item_name")
+  weekKey         Int          @map("week_key")
+  startingBid     Decimal      @map("starting_bid")
+  currentBid      Decimal      @map("current_bid")
+  highestBidderId String?      @map("highest_bidder_id")
+  isClosed        Boolean      @default(false) @map("is_closed")
+  closedAt        DateTime?    @map("closed_at")
+  createdAt       DateTime     @default(now()) @map("created_at")
+  group           Group        @relation(fields: [groupId], references: [id])
+  bids            AuctionBid[]
+
+  @@unique([groupId, weekKey, itemKey])
+  @@index([groupId, isClosed])
+  @@map("auctions")
+}
+
+/// پیشنهاد قیمت در حراجی
+model AuctionBid {
+  id        String   @id @default(uuid()) @map("id")
+  auctionId String   @map("auction_id")
+  bidderId  String   @map("bidder_id")
+  amount    Decimal  @map("amount")
+  bidAt     DateTime @default(now()) @map("bid_at")
+  auction   Auction  @relation(fields: [auctionId], references: [id])
+  bidder    Player   @relation(fields: [bidderId], references: [id])
+
+  @@index([auctionId, amount])
+  @@index([bidderId])
+  @@map("auction_bids")
+}
+
+/// اشتراک باشگاه ورزشی؛ افزایش سقف سلامت به ۱۲۰
+model GymMembership {
+  id        String   @id @default(uuid()) @map("id")
+  playerId  String   @map("player_id")
+  startedAt DateTime @default(now()) @map("started_at")
+  expiresAt DateTime @map("expires_at")
+  player    Player   @relation(fields: [playerId], references: [id])
+
+  @@index([playerId, expiresAt])
+  @@map("gym_memberships")
+}
+
+/// قرض بین بازیکنان
+model PlayerLoan {
+  id          String    @id @default(uuid()) @map("id")
+  lenderId    String    @map("lender_id")
+  borrowerId  String    @map("borrower_id")
+  principal   Decimal   @map("principal")
+  feeRate     Decimal   @default(0.05) @map("fee_rate")
+  totalRepay  Decimal   @map("total_repay")
+  status      String    @default("PENDING") @map("status")
+  dueAt       DateTime? @map("due_at")
+  disbursedAt DateTime? @map("disbursed_at")
+  paidAt      DateTime? @map("paid_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  lender      Player    @relation("LenderLoans", fields: [lenderId], references: [id])
+  borrower    Player    @relation("BorrowerLoans", fields: [borrowerId], references: [id])
+
+  @@index([borrowerId, status])
+  @@index([lenderId, status])
+  @@map("player_loans")
+}
+
+/// شعبهٔ کسب‌وکار در مناطق دیگر
+model BusinessBranch {
+  id               String         @id @default(uuid()) @map("id")
+  businessId       String         @map("business_id")
+  groupId          String         @map("group_id")
+  level            Int            @default(1) @map("level")
+  employeeCapacity Int            @default(3) @map("employee_capacity")
+  incomePerDay     Decimal        @default(400000) @map("income_per_day")
+  lastCollectedAt  DateTime       @default(now()) @map("last_collected_at")
+  status           BusinessStatus @default(ACTIVE) @map("status")
+  createdAt        DateTime       @default(now()) @map("created_at")
+  business         Business       @relation(fields: [businessId], references: [id])
+  group            Group          @relation(fields: [groupId], references: [id])
+
+  @@unique([businessId, groupId])
+  @@index([groupId])
+  @@map("business_branches")
+}
+
+/// چالش جمعی هفتگی منطقه
+model RegionalChallenge {
+  id              String                          @id @default(uuid()) @map("id")
+  groupId         String                          @map("group_id")
+  weekKey         Int                             @map("week_key")
+  goalKey         String                          @map("goal_key")
+  goalTitle       String                          @map("goal_title")
+  targetValue     Int                             @map("target_value")
+  currentValue    Int                             @default(0) @map("current_value")
+  isCompleted     Boolean                         @default(false) @map("is_completed")
+  rewardPerPlayer Decimal                         @map("reward_per_player")
+  completedAt     DateTime?                       @map("completed_at")
+  group           Group                           @relation(fields: [groupId], references: [id])
+  contributions   RegionalChallengeContribution[]
+
+  @@unique([groupId, weekKey, goalKey])
+  @@index([groupId, weekKey])
+  @@map("regional_challenges")
+}
+
+/// مشارکت هر بازیکن در چالش منطقه؛ Unique پرداخت پاداش را یک‌باره می‌کند
+model RegionalChallengeContribution {
+  id          String            @id @default(uuid()) @map("id")
+  challengeId String            @map("challenge_id")
+  playerId    String            @map("player_id")
+  points      Int               @default(0) @map("points")
+  claimedAt   DateTime?         @map("claimed_at")
+  updatedAt   DateTime          @updatedAt @map("updated_at")
+  challenge   RegionalChallenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  player      Player            @relation(fields: [playerId], references: [id])
+
+  @@unique([challengeId, playerId])
+  @@index([playerId])
+  @@map("regional_challenge_contributions")
+}
+
+/// وصیت — هر شخصیت در هر لحظه حداکثر یک وصیتِ معتبر دارد.
+///
+/// چرا `ownerId` یکتاست؟ انتقالِ میراث باید «آخرین وصیتِ معتبر» را مرجع
+/// بگیرد؛ اگر چند ردیف برای یک بازیکن ممکن بود، انتخاب وارث به ترتیبِ
+/// تصادفیِ ردیف‌ها وابسته می‌شد و یک بازیکن می‌توانست وصیتِ تازه بسازد
+/// در حالی که وصیتِ قدیمی هم زنده بماند. با قیدِ یگانگی، «ثبت وصیت» یک
+/// `upsert` اتمیک است و مرگ فقط یک گیرندهٔ قطعی می‌بیند.
+model Will {
+  id        String   @id @default(uuid()) @map("id")
+  ownerId   String   @unique @map("owner_id")
+  heirId    String   @map("heir_id")
+  note      String?  @map("note")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  owner     Player   @relation("WillOwner", fields: [ownerId], references: [id], onDelete: Cascade, map: "wills_owner_id_fkey")
+  heir      Player   @relation("WillHeir", fields: [heirId], references: [id], map: "wills_heir_id_fkey")
+
+  @@index([heirId])
+  @@map("wills")
+}
+
+/// وضعیت پروندهٔ میراث.
+///
+/// ترتیب مراحل عمدی است: هر مرحله فقط از مرحلهٔ قبلی جلو می‌رود و هر گذر
+/// با یک نوشتارِ شرطی (`updateMany ... where status = قبلی`) انجام می‌شود.
+/// پس restart وسط کار یا کلیک دوباره، پرونده را از وسط دوباره اجرا نمی‌کند.
+enum InheritanceStatus {
+  /// پرونده باز شد؛ هنوز هیچ پولی جابه‌جا نشده.
+  PENDING
+  /// بدهی‌ها از دارایی نقدی تسویه شدند.
+  SETTLED_DEBTS
+  /// دارایی‌ها (پول، ملک، کسب‌وکار، سپرده، سهام، انبار) به وارث منتقل شدند.
+  TRANSFERRED
+  /// پرونده بسته شد؛ اعلان‌ها هم فرستاده شدند.
+  COMPLETED
+  /// وصیتِ معتبری نبود؛ دارایی محفوظ ماند و پرونده باز است تا ادمین تصمیم بگیرد.
+  NO_HEIR
+  /// خطای غیرمنتظره؛ نیاز به بررسی/تلاش دوبارهٔ دستی.
+  FAILED
+}
+
+/// پروندهٔ میراث — «مرگ» و «انتقال دارایی» هر دو فقط این‌جا ثبت می‌شوند.
+///
+/// چرا یک رکورد یکتا برای هر متوفی (`deceasedId` یکتاست)؟ مرگ می‌تواند از
+/// چند مسیر هم‌زمان فراخوانی شود (پایین آمدن سلامت، اقدام مدیریت، تلاشِ
+/// دوبارهٔ یک job). با قیدِ یگانگی + نوشتارِ شرطی روی وضعیت بازیکن، مرگ
+/// دقیقاً یک‌بار ثبت می‌شود و انتقال هم دقیقاً یک‌بار اجرا می‌گردد.
+model InheritanceCase {
+  id              String            @id @default(uuid()) @map("id")
+  deceasedId      String            @map("deceased_id")
+  /// چندمین زندگیِ متوفی بود — یکتاییِ پرونده «یک مرگ در هر زندگی» است.
+  lifeIndex       Int               @default(1) @map("life_index")
+  heirId          String?           @map("heir_id")
+  status          InheritanceStatus @default(PENDING) @map("status")
+  /// علت مرگ (کدِ داخلی؛ برچسب فارسی‌اش در سرویس است).
+  cause           String            @map("cause")
+  /// عکسِ لحظه‌ای دارایی/بدهیِ متوفی در زمان باز شدن پرونده.
+  snapshot        Json?             @map("snapshot")
+  cashTransferred Decimal           @default(0) @map("cash_transferred")
+  debtSettled     Decimal           @default(0) @map("debt_settled")
+  /// بدهی‌ای که داراییِ نقدی کفایتش را نکرد (حذف نشد؛ ثبت شد).
+  debtUnpaid      Decimal           @default(0) @map("debt_unpaid")
+  propertiesCount Int               @default(0) @map("properties_count")
+  businessesCount Int               @default(0) @map("businesses_count")
+  holdingsCount   Int               @default(0) @map("holdings_count")
+  attempts        Int               @default(0) @map("attempts")
+  lastError       String?           @map("last_error")
+  openedAt        DateTime          @default(now()) @map("opened_at")
+  completedAt     DateTime?         @map("completed_at")
+  deceased        Player            @relation("InheritanceDeceased", fields: [deceasedId], references: [id], onDelete: Cascade, map: "inheritance_cases_deceased_id_fkey")
+  // برخلاف حالت پیش‌فرضِ Prisma برای رابطهٔ اختیاری (SET NULL)، این‌جا
+  // Restrict عمدی است: پروندهٔ میراث سندِ مالی است و اگر وارث پاک شود، هیچ
+  // ردیفی نمی‌ماند که بگوید دارایی به چه کسی رسیده — فقط heir_id خالی
+  // می‌شد و ممیزی بی‌معنا. حذفِ حسابِ وارث تا تعیین‌تکلیفِ پرونده مجاز نیست
+  // (همان قانونی که در `PLAYER_DATA_PLAN` به‌صورت block ثبت شده).
+  heir            Player?           @relation("InheritanceHeir", fields: [heirId], references: [id], onDelete: Restrict, map: "inheritance_cases_heir_id_fkey")
+
+  @@unique([deceasedId, lifeIndex])
+  @@index([status])
+  @@index([heirId])
+  @@map("inheritance_cases")
+}

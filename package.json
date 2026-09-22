@@ -1,0 +1,56 @@
+{
+  "name": "virtual-life-bot",
+  "version": "1.0.0",
+  "description": "Legacy Game (میراث) — Persian life-simulation Telegram bot",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "prisma generate && tsc",
+    "typecheck": "tsc --noEmit",
+    "start": "prisma migrate deploy && node dist/app.js",
+    "dev": "tsx watch src/app.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "prisma:seed": "tsx prisma/seed.ts",
+    "lint": "eslint src tests",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "grammy",
+    "typescript",
+    "prisma",
+    "postgres",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/adapter-pg": "^6.19.3",
+    "@prisma/client": "6.19.3",
+    "dotenv": "^16.4.7",
+    "grammy": "^1.35.0",
+    "pg": "^8.23.0",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "prisma": "6.19.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.4",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.1",
+    "ts-jest": "^29.2.5",
+    "tsx": "^4.19.3",
+    "typescript": "~5.9.0"
+  }
+}

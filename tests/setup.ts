@@ -1,0 +1,5 @@
+process.env.NODE_ENV = 'test'
+process.env.BOT_TOKEN = '123456:TEST_TOKEN'
+process.env.DATABASE_URL = 'postgresql://user:pass@localhost:5432/virtual-life-test'
+process.env.LOG_LEVEL = 'error'
+process.env.PORT = '3000'

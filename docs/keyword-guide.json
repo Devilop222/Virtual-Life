@@ -1,0 +1,1136 @@
+[
+  {
+    "trigger": "شناسنامه",
+    "syntax": "شناسنامه",
+    "location": "BOTH",
+    "result": "شناسنامه",
+    "canonical": "شناسنامه"
+  },
+  {
+    "trigger": "شناسنامه من",
+    "syntax": "شناسنامه من",
+    "location": "BOTH",
+    "result": "شناسنامه",
+    "canonical": "شناسنامه"
+  },
+  {
+    "trigger": "شناسنامه ی من",
+    "syntax": "شناسنامه ی من",
+    "location": "BOTH",
+    "result": "شناسنامه",
+    "canonical": "شناسنامه"
+  },
+  {
+    "trigger": "شناسنامه ام",
+    "syntax": "شناسنامه ام",
+    "location": "BOTH",
+    "result": "شناسنامه",
+    "canonical": "شناسنامه"
+  },
+  {
+    "trigger": "کارت شناسایی",
+    "syntax": "کارت شناسایی",
+    "location": "BOTH",
+    "result": "شناسنامه",
+    "canonical": "شناسنامه"
+  },
+  {
+    "trigger": "اطلاعات من",
+    "syntax": "اطلاعات من",
+    "location": "BOTH",
+    "result": "شناسنامه",
+    "canonical": "شناسنامه"
+  },
+  {
+    "trigger": "مشخصات من",
+    "syntax": "مشخصات من",
+    "location": "BOTH",
+    "result": "شناسنامه",
+    "canonical": "شناسنامه"
+  },
+  {
+    "trigger": "مشخصات",
+    "syntax": "مشخصات",
+    "location": "BOTH",
+    "result": "شناسنامه",
+    "canonical": "شناسنامه"
+  },
+  {
+    "trigger": "وضعیت من",
+    "syntax": "وضعیت من",
+    "location": "BOTH",
+    "result": "وضعیت من",
+    "canonical": "وضعیت من"
+  },
+  {
+    "trigger": "وضعیتم",
+    "syntax": "وضعیتم",
+    "location": "BOTH",
+    "result": "وضعیت من",
+    "canonical": "وضعیت من"
+  },
+  {
+    "trigger": "وضعیت",
+    "syntax": "وضعیت",
+    "location": "BOTH",
+    "result": "وضعیت من",
+    "canonical": "وضعیت من"
+  },
+  {
+    "trigger": "زندگی من",
+    "syntax": "زندگی من",
+    "location": "BOTH",
+    "result": "زندگی من",
+    "canonical": "زندگی من"
+  },
+  {
+    "trigger": "زندگی",
+    "syntax": "زندگی",
+    "location": "BOTH",
+    "result": "زندگی من",
+    "canonical": "زندگی من"
+  },
+  {
+    "trigger": "راهنما",
+    "syntax": "راهنما",
+    "location": "BOTH",
+    "result": "راهنما",
+    "canonical": "راهنما"
+  },
+  {
+    "trigger": "راهنمایی",
+    "syntax": "راهنمایی",
+    "location": "BOTH",
+    "result": "راهنما",
+    "canonical": "راهنما"
+  },
+  {
+    "trigger": "کمک",
+    "syntax": "کمک",
+    "location": "BOTH",
+    "result": "راهنما",
+    "canonical": "راهنما"
+  },
+  {
+    "trigger": "پشتیبانی",
+    "syntax": "پشتیبانی",
+    "location": "PRIVATE_ONLY",
+    "result": "پشتیبانی",
+    "canonical": "پشتیبانی"
+  },
+  {
+    "trigger": "تماس با پشتیبانی",
+    "syntax": "تماس با پشتیبانی",
+    "location": "PRIVATE_ONLY",
+    "result": "پشتیبانی",
+    "canonical": "پشتیبانی"
+  },
+  {
+    "trigger": "زندگی تازه",
+    "syntax": "زندگی تازه",
+    "location": "PRIVATE_ONLY",
+    "result": "زندگی تازه",
+    "canonical": "زندگی تازه"
+  },
+  {
+    "trigger": "زندگی دوباره",
+    "syntax": "زندگی دوباره",
+    "location": "PRIVATE_ONLY",
+    "result": "زندگی تازه",
+    "canonical": "زندگی تازه"
+  },
+  {
+    "trigger": "گزارش مشکل",
+    "syntax": "گزارش مشکل",
+    "location": "PRIVATE_ONLY",
+    "result": "پشتیبانی",
+    "canonical": "پشتیبانی"
+  },
+  {
+    "trigger": "ثبت شکایت",
+    "syntax": "ثبت شکایت",
+    "location": "PRIVATE_ONLY",
+    "result": "پشتیبانی",
+    "canonical": "پشتیبانی"
+  },
+  {
+    "trigger": "خانه",
+    "syntax": "خانه",
+    "location": "GROUP_ONLY",
+    "result": "خانه",
+    "canonical": "خانه"
+  },
+  {
+    "trigger": "خونه",
+    "syntax": "خونه",
+    "location": "GROUP_ONLY",
+    "result": "خانه",
+    "canonical": "خانه"
+  },
+  {
+    "trigger": "مسکن",
+    "syntax": "مسکن",
+    "location": "GROUP_ONLY",
+    "result": "خانه",
+    "canonical": "خانه"
+  },
+  {
+    "trigger": "اجاره",
+    "syntax": "اجاره",
+    "location": "GROUP_ONLY",
+    "result": "اجاره",
+    "canonical": "اجاره"
+  },
+  {
+    "trigger": "بازار اجاره",
+    "syntax": "بازار اجاره",
+    "location": "GROUP_ONLY",
+    "result": "اجاره",
+    "canonical": "اجاره"
+  },
+  {
+    "trigger": "محل زندگی",
+    "syntax": "محل زندگی",
+    "location": "BOTH",
+    "result": "محل زندگی",
+    "canonical": "محل زندگی"
+  },
+  {
+    "trigger": "اقامت",
+    "syntax": "اقامت",
+    "location": "BOTH",
+    "result": "محل زندگی",
+    "canonical": "محل زندگی"
+  },
+  {
+    "trigger": "مهاجرت",
+    "syntax": "مهاجرت",
+    "location": "BOTH",
+    "result": "محل زندگی",
+    "canonical": "محل زندگی"
+  },
+  {
+    "trigger": "گذرنامه",
+    "syntax": "گذرنامه",
+    "location": "BOTH",
+    "result": "گذرنامه",
+    "canonical": "گذرنامه"
+  },
+  {
+    "trigger": "مهر سفر",
+    "syntax": "مهر سفر",
+    "location": "BOTH",
+    "result": "گذرنامه",
+    "canonical": "گذرنامه"
+  },
+  {
+    "trigger": "سفر",
+    "syntax": "سفر",
+    "location": "BOTH",
+    "result": "گذرنامه",
+    "canonical": "گذرنامه"
+  },
+  {
+    "trigger": "بانک",
+    "syntax": "بانک",
+    "location": "BOTH",
+    "result": "بانک",
+    "canonical": "بانک"
+  },
+  {
+    "trigger": "حساب",
+    "syntax": "حساب",
+    "location": "BOTH",
+    "result": "بانک",
+    "canonical": "بانک"
+  },
+  {
+    "trigger": "حساب بانکی",
+    "syntax": "حساب بانکی",
+    "location": "BOTH",
+    "result": "بانک",
+    "canonical": "بانک"
+  },
+  {
+    "trigger": "کیف پول",
+    "syntax": "کیف پول",
+    "location": "BOTH",
+    "result": "بانک",
+    "canonical": "بانک"
+  },
+  {
+    "trigger": "موجودی",
+    "syntax": "موجودی",
+    "location": "BOTH",
+    "result": "بانک",
+    "canonical": "بانک"
+  },
+  {
+    "trigger": "وام",
+    "syntax": "وام",
+    "location": "BOTH",
+    "result": "بانک",
+    "canonical": "بانک"
+  },
+  {
+    "trigger": "وام بانکی",
+    "syntax": "وام بانکی",
+    "location": "BOTH",
+    "result": "بانک",
+    "canonical": "بانک"
+  },
+  {
+    "trigger": "سپرده",
+    "syntax": "سپرده",
+    "location": "BOTH",
+    "result": "سپرده",
+    "canonical": "سپرده"
+  },
+  {
+    "trigger": "سپرده مدت دار",
+    "syntax": "سپرده مدت دار",
+    "location": "BOTH",
+    "result": "سپرده",
+    "canonical": "سپرده"
+  },
+  {
+    "trigger": "سپرده گذاری",
+    "syntax": "سپرده گذاری",
+    "location": "BOTH",
+    "result": "سپرده",
+    "canonical": "سپرده"
+  },
+  {
+    "trigger": "اعتبار",
+    "syntax": "اعتبار",
+    "location": "BOTH",
+    "result": "اعتبار مالی",
+    "canonical": "اعتبار"
+  },
+  {
+    "trigger": "اعتبار مالی",
+    "syntax": "اعتبار مالی",
+    "location": "BOTH",
+    "result": "اعتبار مالی",
+    "canonical": "اعتبار"
+  },
+  {
+    "trigger": "امتیاز اعتباری",
+    "syntax": "امتیاز اعتباری",
+    "location": "BOTH",
+    "result": "اعتبار مالی",
+    "canonical": "اعتبار"
+  },
+  {
+    "trigger": "دفتر مالی",
+    "syntax": "دفتر مالی",
+    "location": "BOTH",
+    "result": "دفتر مالی",
+    "canonical": "دفتر مالی"
+  },
+  {
+    "trigger": "تراکنش",
+    "syntax": "تراکنش",
+    "location": "BOTH",
+    "result": "دفتر مالی",
+    "canonical": "دفتر مالی"
+  },
+  {
+    "trigger": "تراکنش ها",
+    "syntax": "تراکنش ها",
+    "location": "BOTH",
+    "result": "دفتر مالی",
+    "canonical": "دفتر مالی"
+  },
+  {
+    "trigger": "تراکنشها",
+    "syntax": "تراکنشها",
+    "location": "BOTH",
+    "result": "دفتر مالی",
+    "canonical": "دفتر مالی"
+  },
+  {
+    "trigger": "صورتحساب",
+    "syntax": "صورتحساب",
+    "location": "BOTH",
+    "result": "دفتر مالی",
+    "canonical": "دفتر مالی"
+  },
+  {
+    "trigger": "درمانگاه",
+    "syntax": "درمانگاه",
+    "location": "BOTH",
+    "result": "درمانگاه",
+    "canonical": "درمانگاه"
+  },
+  {
+    "trigger": "بیمه",
+    "syntax": "بیمه",
+    "location": "BOTH",
+    "result": "درمانگاه",
+    "canonical": "درمانگاه"
+  },
+  {
+    "trigger": "تحصیلات",
+    "syntax": "تحصیلات",
+    "location": "GROUP_ONLY",
+    "result": "تحصیل",
+    "canonical": "تحصیل"
+  },
+  {
+    "trigger": "تحصیل",
+    "syntax": "تحصیل",
+    "location": "GROUP_ONLY",
+    "result": "تحصیل",
+    "canonical": "تحصیل"
+  },
+  {
+    "trigger": "دانشگاه",
+    "syntax": "دانشگاه",
+    "location": "GROUP_ONLY",
+    "result": "تحصیل",
+    "canonical": "تحصیل"
+  },
+  {
+    "trigger": "دانش",
+    "syntax": "دانش",
+    "location": "GROUP_ONLY",
+    "result": "تحصیل",
+    "canonical": "تحصیل"
+  },
+  {
+    "trigger": "مدرک",
+    "syntax": "مدرک",
+    "location": "GROUP_ONLY",
+    "result": "تحصیل",
+    "canonical": "تحصیل"
+  },
+  {
+    "trigger": "کار",
+    "syntax": "کار",
+    "location": "GROUP_ONLY",
+    "result": "کار و شغل",
+    "canonical": "کار"
+  },
+  {
+    "trigger": "شغل",
+    "syntax": "شغل",
+    "location": "GROUP_ONLY",
+    "result": "کار و شغل",
+    "canonical": "کار"
+  },
+  {
+    "trigger": "شغل من",
+    "syntax": "شغل من",
+    "location": "GROUP_ONLY",
+    "result": "شغل من",
+    "canonical": "شغل من"
+  },
+  {
+    "trigger": "فیش حقوقی",
+    "syntax": "فیش حقوقی",
+    "location": "GROUP_ONLY",
+    "result": "شغل من",
+    "canonical": "شغل من"
+  },
+  {
+    "trigger": "شرکت های من",
+    "syntax": "شرکت های من",
+    "location": "GROUP_ONLY",
+    "result": "کسب‌وکار",
+    "canonical": "کسب‌وکار"
+  },
+  {
+    "trigger": "شرکت",
+    "syntax": "شرکت",
+    "location": "GROUP_ONLY",
+    "result": "کسب‌وکار",
+    "canonical": "کسب‌وکار"
+  },
+  {
+    "trigger": "کسب و کار",
+    "syntax": "کسب و کار",
+    "location": "GROUP_ONLY",
+    "result": "کسب‌وکار",
+    "canonical": "کسب‌وکار"
+  },
+  {
+    "trigger": "کسب و کارها",
+    "syntax": "کسب و کارها",
+    "location": "GROUP_ONLY",
+    "result": "کسب‌وکار",
+    "canonical": "کسب‌وکار"
+  },
+  {
+    "trigger": "کسب وکار",
+    "syntax": "کسب وکار",
+    "location": "GROUP_ONLY",
+    "result": "کسب‌وکار",
+    "canonical": "کسب‌وکار"
+  },
+  {
+    "trigger": "کسب وکارها",
+    "syntax": "کسب وکارها",
+    "location": "GROUP_ONLY",
+    "result": "کسب‌وکار",
+    "canonical": "کسب‌وکار"
+  },
+  {
+    "trigger": "کسبوکار",
+    "syntax": "کسبوکار",
+    "location": "GROUP_ONLY",
+    "result": "کسب‌وکار",
+    "canonical": "کسب‌وکار"
+  },
+  {
+    "trigger": "شعبه",
+    "syntax": "شعبه",
+    "location": "GROUP_ONLY",
+    "result": "شعبه‌ها",
+    "canonical": "شعبه"
+  },
+  {
+    "trigger": "شعبه ها",
+    "syntax": "شعبه ها",
+    "location": "GROUP_ONLY",
+    "result": "شعبه‌ها",
+    "canonical": "شعبه"
+  },
+  {
+    "trigger": "قرض",
+    "syntax": "قرض",
+    "location": "GROUP_ONLY",
+    "result": "قرض",
+    "canonical": "قرض"
+  },
+  {
+    "trigger": "قرض بازیکنی",
+    "syntax": "قرض بازیکنی",
+    "location": "GROUP_ONLY",
+    "result": "قرض",
+    "canonical": "قرض"
+  },
+  {
+    "trigger": "وام بازیکنی",
+    "syntax": "وام بازیکنی",
+    "location": "GROUP_ONLY",
+    "result": "قرض",
+    "canonical": "قرض"
+  },
+  {
+    "trigger": "باشگاه",
+    "syntax": "باشگاه",
+    "location": "GROUP_ONLY",
+    "result": "باشگاه",
+    "canonical": "باشگاه"
+  },
+  {
+    "trigger": "باشگاه ورزشی",
+    "syntax": "باشگاه ورزشی",
+    "location": "GROUP_ONLY",
+    "result": "باشگاه",
+    "canonical": "باشگاه"
+  },
+  {
+    "trigger": "ورزش",
+    "syntax": "ورزش",
+    "location": "GROUP_ONLY",
+    "result": "باشگاه",
+    "canonical": "باشگاه"
+  },
+  {
+    "trigger": "فروشگاه",
+    "syntax": "فروشگاه",
+    "location": "GROUP_ONLY",
+    "result": "فروشگاه",
+    "canonical": "فروشگاه"
+  },
+  {
+    "trigger": "خرید",
+    "syntax": "خرید",
+    "location": "GROUP_ONLY",
+    "result": "فروشگاه",
+    "canonical": "فروشگاه"
+  },
+  {
+    "trigger": "انبار",
+    "syntax": "انبار",
+    "location": "GROUP_ONLY",
+    "result": "انبار",
+    "canonical": "انبار"
+  },
+  {
+    "trigger": "بازار",
+    "syntax": "بازار",
+    "location": "GROUP_ONLY",
+    "result": "بازار",
+    "canonical": "بازار"
+  },
+  {
+    "trigger": "بازار بازیکنان",
+    "syntax": "بازار بازیکنان",
+    "location": "GROUP_ONLY",
+    "result": "بازار",
+    "canonical": "بازار"
+  },
+  {
+    "trigger": "معامله",
+    "syntax": "معامله",
+    "location": "GROUP_ONLY",
+    "result": "بازار",
+    "canonical": "بازار"
+  },
+  {
+    "trigger": "حراجی",
+    "syntax": "حراجی",
+    "location": "GROUP_ONLY",
+    "result": "حراجی",
+    "canonical": "حراجی"
+  },
+  {
+    "trigger": "حراج",
+    "syntax": "حراج",
+    "location": "GROUP_ONLY",
+    "result": "حراجی",
+    "canonical": "حراجی"
+  },
+  {
+    "trigger": "مزایده",
+    "syntax": "مزایده",
+    "location": "GROUP_ONLY",
+    "result": "حراجی",
+    "canonical": "حراجی"
+  },
+  {
+    "trigger": "آگهی",
+    "syntax": "آگهی",
+    "location": "GROUP_ONLY",
+    "result": "آگهی",
+    "canonical": "آگهی"
+  },
+  {
+    "trigger": "اگهی",
+    "syntax": "اگهی",
+    "location": "GROUP_ONLY",
+    "result": "آگهی",
+    "canonical": "آگهی"
+  },
+  {
+    "trigger": "تبلیغات",
+    "syntax": "تبلیغات",
+    "location": "GROUP_ONLY",
+    "result": "آگهی",
+    "canonical": "آگهی"
+  },
+  {
+    "trigger": "ازدواج",
+    "syntax": "ازدواج",
+    "location": "GROUP_ONLY",
+    "result": "خانواده",
+    "canonical": "خانواده"
+  },
+  {
+    "trigger": "خانواده",
+    "syntax": "خانواده",
+    "location": "GROUP_ONLY",
+    "result": "خانواده",
+    "canonical": "خانواده"
+  },
+  {
+    "trigger": "خواستگاری",
+    "syntax": "خواستگاری",
+    "location": "GROUP_ONLY",
+    "result": "خانواده",
+    "canonical": "خانواده"
+  },
+  {
+    "trigger": "همسر",
+    "syntax": "همسر",
+    "location": "GROUP_ONLY",
+    "result": "خانواده",
+    "canonical": "خانواده"
+  },
+  {
+    "trigger": "حیوان",
+    "syntax": "حیوان",
+    "location": "BOTH",
+    "result": "حیوان خانگی",
+    "canonical": "حیوان"
+  },
+  {
+    "trigger": "حیوان خانگی",
+    "syntax": "حیوان خانگی",
+    "location": "BOTH",
+    "result": "حیوان خانگی",
+    "canonical": "حیوان"
+  },
+  {
+    "trigger": "وصیت",
+    "syntax": "وصیت",
+    "location": "BOTH",
+    "result": "وصیت و میراث",
+    "canonical": "وصیت"
+  },
+  {
+    "trigger": "وصیتنامه",
+    "syntax": "وصیتنامه",
+    "location": "BOTH",
+    "result": "وصیت و میراث",
+    "canonical": "وصیت"
+  },
+  {
+    "trigger": "وصیت نامه",
+    "syntax": "وصیت نامه",
+    "location": "BOTH",
+    "result": "وصیت و میراث",
+    "canonical": "وصیت"
+  },
+  {
+    "trigger": "میراث",
+    "syntax": "میراث",
+    "location": "BOTH",
+    "result": "وصیت و میراث",
+    "canonical": "وصیت"
+  },
+  {
+    "trigger": "وارث",
+    "syntax": "وارث",
+    "location": "BOTH",
+    "result": "وصیت و میراث",
+    "canonical": "وصیت"
+  },
+  {
+    "trigger": "ارث",
+    "syntax": "ارث",
+    "location": "BOTH",
+    "result": "وصیت و میراث",
+    "canonical": "وصیت"
+  },
+  {
+    "trigger": "روابط",
+    "syntax": "روابط",
+    "location": "BOTH",
+    "result": "روابط",
+    "canonical": "روابط"
+  },
+  {
+    "trigger": "دوستان",
+    "syntax": "دوستان",
+    "location": "PRIVATE_ONLY",
+    "result": "دعوت دوستان",
+    "canonical": "دعوت دوستان"
+  },
+  {
+    "trigger": "مهارت ها",
+    "syntax": "مهارت ها",
+    "location": "BOTH",
+    "result": "مهارت‌ها",
+    "canonical": "مهارت‌ها"
+  },
+  {
+    "trigger": "مهارتها",
+    "syntax": "مهارتها",
+    "location": "BOTH",
+    "result": "مهارت‌ها",
+    "canonical": "مهارت‌ها"
+  },
+  {
+    "trigger": "مهارت",
+    "syntax": "مهارت",
+    "location": "BOTH",
+    "result": "مهارت‌ها",
+    "canonical": "مهارت‌ها"
+  },
+  {
+    "trigger": "گروه",
+    "syntax": "گروه",
+    "location": "GROUP_ONLY",
+    "result": "اطلاعات گروه",
+    "canonical": "گروه"
+  },
+  {
+    "trigger": "گروه من",
+    "syntax": "گروه من",
+    "location": "GROUP_ONLY",
+    "result": "اطلاعات گروه",
+    "canonical": "گروه"
+  },
+  {
+    "trigger": "اطلاعات گروه",
+    "syntax": "اطلاعات گروه",
+    "location": "GROUP_ONLY",
+    "result": "اطلاعات گروه",
+    "canonical": "گروه"
+  },
+  {
+    "trigger": "منطقه من",
+    "syntax": "منطقه من",
+    "location": "GROUP_ONLY",
+    "result": "اطلاعات گروه",
+    "canonical": "گروه"
+  },
+  {
+    "trigger": "شهر",
+    "syntax": "شهر",
+    "location": "GROUP_ONLY",
+    "result": "اقتصاد شهر",
+    "canonical": "اقتصاد"
+  },
+  {
+    "trigger": "اقتصاد شهر",
+    "syntax": "اقتصاد شهر",
+    "location": "GROUP_ONLY",
+    "result": "اقتصاد شهر",
+    "canonical": "اقتصاد"
+  },
+  {
+    "trigger": "اقتصاد",
+    "syntax": "اقتصاد",
+    "location": "GROUP_ONLY",
+    "result": "اقتصاد شهر",
+    "canonical": "اقتصاد"
+  },
+  {
+    "trigger": "خبر",
+    "syntax": "خبر",
+    "location": "GROUP_ONLY",
+    "result": "خبر منطقه",
+    "canonical": "خبر"
+  },
+  {
+    "trigger": "خبرها",
+    "syntax": "خبرها",
+    "location": "GROUP_ONLY",
+    "result": "خبر منطقه",
+    "canonical": "خبر"
+  },
+  {
+    "trigger": "اخبار",
+    "syntax": "اخبار",
+    "location": "GROUP_ONLY",
+    "result": "خبر منطقه",
+    "canonical": "خبر"
+  },
+  {
+    "trigger": "منطقه",
+    "syntax": "منطقه",
+    "location": "GROUP_ONLY",
+    "result": "وضعیت منطقه",
+    "canonical": "منطقه"
+  },
+  {
+    "trigger": "وضعیت شهر",
+    "syntax": "وضعیت شهر",
+    "location": "GROUP_ONLY",
+    "result": "وضعیت منطقه",
+    "canonical": "منطقه"
+  },
+  {
+    "trigger": "مدیریت",
+    "syntax": "مدیریت",
+    "location": "GROUP_ONLY",
+    "result": "مدیریت منطقه",
+    "canonical": "مدیریت"
+  },
+  {
+    "trigger": "مدیریت منطقه",
+    "syntax": "مدیریت منطقه",
+    "location": "GROUP_ONLY",
+    "result": "مدیریت منطقه",
+    "canonical": "مدیریت"
+  },
+  {
+    "trigger": "چالش",
+    "syntax": "چالش",
+    "location": "GROUP_ONLY",
+    "result": "چالش منطقه",
+    "canonical": "چالش"
+  },
+  {
+    "trigger": "چالش منطقه",
+    "syntax": "چالش منطقه",
+    "location": "GROUP_ONLY",
+    "result": "چالش منطقه",
+    "canonical": "چالش"
+  },
+  {
+    "trigger": "سیاست",
+    "syntax": "سیاست",
+    "location": "GROUP_ONLY",
+    "result": "سیاست شهر",
+    "canonical": "سیاست"
+  },
+  {
+    "trigger": "سیاست شهر",
+    "syntax": "سیاست شهر",
+    "location": "GROUP_ONLY",
+    "result": "سیاست شهر",
+    "canonical": "سیاست"
+  },
+  {
+    "trigger": "قرعه کشی",
+    "syntax": "قرعه کشی",
+    "location": "GROUP_ONLY",
+    "result": "قرعه‌کشی",
+    "canonical": "قرعه‌کشی"
+  },
+  {
+    "trigger": "قرعه",
+    "syntax": "قرعه",
+    "location": "GROUP_ONLY",
+    "result": "قرعه‌کشی",
+    "canonical": "قرعه‌کشی"
+  },
+  {
+    "trigger": "لیدربورد",
+    "syntax": "لیدربورد",
+    "location": "BOTH",
+    "result": "لیدربورد",
+    "canonical": "لیدربورد"
+  },
+  {
+    "trigger": "رتبه بندی",
+    "syntax": "رتبه بندی",
+    "location": "BOTH",
+    "result": "لیدربورد",
+    "canonical": "لیدربورد"
+  },
+  {
+    "trigger": "رتبه",
+    "syntax": "رتبه",
+    "location": "BOTH",
+    "result": "رتبه",
+    "canonical": "رتبه"
+  },
+  {
+    "trigger": "آمار",
+    "syntax": "آمار",
+    "location": "BOTH",
+    "result": "آمار زندگی",
+    "canonical": "آمار"
+  },
+  {
+    "trigger": "امار",
+    "syntax": "امار",
+    "location": "BOTH",
+    "result": "آمار زندگی",
+    "canonical": "آمار"
+  },
+  {
+    "trigger": "آمار زندگی",
+    "syntax": "آمار زندگی",
+    "location": "BOTH",
+    "result": "آمار زندگی",
+    "canonical": "آمار"
+  },
+  {
+    "trigger": "امار زندگی",
+    "syntax": "امار زندگی",
+    "location": "BOTH",
+    "result": "آمار زندگی",
+    "canonical": "آمار"
+  },
+  {
+    "trigger": "ماموریت",
+    "syntax": "ماموریت",
+    "location": "BOTH",
+    "result": "مأموریت",
+    "canonical": "مأموریت"
+  },
+  {
+    "trigger": "ماموریت ها",
+    "syntax": "ماموریت ها",
+    "location": "BOTH",
+    "result": "مأموریت",
+    "canonical": "مأموریت"
+  },
+  {
+    "trigger": "مأموریت",
+    "syntax": "مأموریت",
+    "location": "BOTH",
+    "result": "مأموریت",
+    "canonical": "مأموریت"
+  },
+  {
+    "trigger": "تاریخچه",
+    "syntax": "تاریخچه",
+    "location": "BOTH",
+    "result": "سرگذشت",
+    "canonical": "تاریخچه"
+  },
+  {
+    "trigger": "سرگذشت",
+    "syntax": "سرگذشت",
+    "location": "BOTH",
+    "result": "سرگذشت",
+    "canonical": "تاریخچه"
+  },
+  {
+    "trigger": "رویدادها",
+    "syntax": "رویدادها",
+    "location": "BOTH",
+    "result": "سرگذشت",
+    "canonical": "تاریخچه"
+  },
+  {
+    "trigger": "کارت",
+    "syntax": "کارت",
+    "location": "BOTH",
+    "result": "کارت روزانه",
+    "canonical": "کارت روزانه"
+  },
+  {
+    "trigger": "کارت روزانه",
+    "syntax": "کارت روزانه",
+    "location": "BOTH",
+    "result": "کارت روزانه",
+    "canonical": "کارت روزانه"
+  },
+  {
+    "trigger": "کارت های روزانه",
+    "syntax": "کارت های روزانه",
+    "location": "BOTH",
+    "result": "کارت روزانه",
+    "canonical": "کارت روزانه"
+  },
+  {
+    "trigger": "کارتهای روزانه",
+    "syntax": "کارتهای روزانه",
+    "location": "BOTH",
+    "result": "کارت روزانه",
+    "canonical": "کارت روزانه"
+  },
+  {
+    "trigger": "کارتها",
+    "syntax": "کارتها",
+    "location": "BOTH",
+    "result": "کارت روزانه",
+    "canonical": "کارت روزانه"
+  },
+  {
+    "trigger": "کارت ها",
+    "syntax": "کارت ها",
+    "location": "BOTH",
+    "result": "کارت روزانه",
+    "canonical": "کارت روزانه"
+  },
+  {
+    "trigger": "نشان ها",
+    "syntax": "نشان ها",
+    "location": "BOTH",
+    "result": "نشان‌ها",
+    "canonical": "نشان‌ها"
+  },
+  {
+    "trigger": "نشانها",
+    "syntax": "نشانها",
+    "location": "BOTH",
+    "result": "نشان‌ها",
+    "canonical": "نشان‌ها"
+  },
+  {
+    "trigger": "نشان",
+    "syntax": "نشان",
+    "location": "BOTH",
+    "result": "نشان‌ها",
+    "canonical": "نشان‌ها"
+  },
+  {
+    "trigger": "دستاورد",
+    "syntax": "دستاورد",
+    "location": "BOTH",
+    "result": "نشان‌ها",
+    "canonical": "نشان‌ها"
+  },
+  {
+    "trigger": "دستاورد ها",
+    "syntax": "دستاورد ها",
+    "location": "BOTH",
+    "result": "نشان‌ها",
+    "canonical": "نشان‌ها"
+  },
+  {
+    "trigger": "دستاوردها",
+    "syntax": "دستاوردها",
+    "location": "BOTH",
+    "result": "نشان‌ها",
+    "canonical": "نشان‌ها"
+  },
+  {
+    "trigger": "گزارش",
+    "syntax": "گزارش",
+    "location": "BOTH",
+    "result": "گزارش هفتگی",
+    "canonical": "گزارش"
+  },
+  {
+    "trigger": "گزارش هفتگی",
+    "syntax": "گزارش هفتگی",
+    "location": "BOTH",
+    "result": "گزارش هفتگی",
+    "canonical": "گزارش"
+  },
+  {
+    "trigger": "شانس",
+    "syntax": "شانس",
+    "location": "BOTH",
+    "result": "شانس روزانه",
+    "canonical": "شانس"
+  },
+  {
+    "trigger": "شانس روزانه",
+    "syntax": "شانس روزانه",
+    "location": "BOTH",
+    "result": "شانس روزانه",
+    "canonical": "شانس"
+  },
+  {
+    "trigger": "استریک",
+    "syntax": "استریک",
+    "location": "BOTH",
+    "result": "استریک روزانه",
+    "canonical": "استریک"
+  },
+  {
+    "trigger": "استریک روزانه",
+    "syntax": "استریک روزانه",
+    "location": "BOTH",
+    "result": "استریک روزانه",
+    "canonical": "استریک"
+  },
+  {
+    "trigger": "دعوت",
+    "syntax": "دعوت",
+    "location": "PRIVATE_ONLY",
+    "result": "دعوت دوستان",
+    "canonical": "دعوت دوستان"
+  },
+  {
+    "trigger": "دعوت دوستان",
+    "syntax": "دعوت دوستان",
+    "location": "PRIVATE_ONLY",
+    "result": "دعوت دوستان",
+    "canonical": "دعوت دوستان"
+  },
+  {
+    "trigger": "اعلان ها",
+    "syntax": "اعلان ها",
+    "location": "BOTH",
+    "result": "اعلان‌ها",
+    "canonical": "اعلان‌ها"
+  },
+  {
+    "trigger": "اعلانها",
+    "syntax": "اعلانها",
+    "location": "BOTH",
+    "result": "اعلان‌ها",
+    "canonical": "اعلان‌ها"
+  },
+  {
+    "trigger": "اعلان",
+    "syntax": "اعلان",
+    "location": "BOTH",
+    "result": "اعلان‌ها",
+    "canonical": "اعلان‌ها"
+  }
+]

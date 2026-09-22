@@ -1,0 +1,16 @@
+node_modules
+dist
+coverage
+.env
+# offline-deps runtime state (postgres data, bundled node, logs, pids)
+.tools/
+*.log
+.DS_Store
+.idea
+.vscode
+# scratch/debug artifacts — never commit these
+test.log
+test-output.txt
+.freebuff/
+npm-install.log
+build.log
